@@ -40,6 +40,7 @@ namespace DeepSpace.LaserTracking
 
 		public Vector2 GetScreenPositionFromRelativePosition(float x, float y)
 		{
+            Debug.Log(x * screenWidthPixel + ":X" + $"x:{x} * wid:{screenWidthPixel}");
 			return new Vector2((int)Mathf.Round(x * screenWidthPixel), screenHeightPixel - (int)Mathf.Round(y * screenHeightPixel));
 		}
 	}
