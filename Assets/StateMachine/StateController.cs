@@ -13,7 +13,7 @@ public class StateController : MonoBehaviour
         scene1 = GameObject.Find("/ScenenOneState").GetComponent<SceneOneState>();
         //sceneX = GameObject.Find("/SceneXState").GetComponent<SceneXState>();
         Debug.Log(scene1);
-        stateMachine.ChangeState(scene1);
+        stateMachine.ChangeState(scene1); // Select what scene should run in your case szene X
         stateMachine.RunState();
     }
 
