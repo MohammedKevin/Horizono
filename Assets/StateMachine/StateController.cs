@@ -6,10 +6,12 @@ public class StateController : MonoBehaviour
 {
     StateMachine stateMachine;
     IState scene1;
+    //IState sceneX;
     // Start is called before the first frame update
     void Start() {
         stateMachine = new StateMachine();
         scene1 = GameObject.Find("/ScenenOneState").GetComponent<SceneOneState>();
+        //sceneX = GameObject.Find("/SceneXState").GetComponent<SceneXState>();
         Debug.Log(scene1);
         stateMachine.ChangeState(scene1);
         stateMachine.RunState();
