@@ -1,6 +1,6 @@
 # AEC - Project
 
-## Stuctur
+## Stucture
 
 Everything added by us is in the Assest folder. In the asset folder is a Deep space folder. Dont change it.
 
