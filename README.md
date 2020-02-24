@@ -4,11 +4,15 @@
 
 Everything added by us is in the Assest folder. In the asset folder is a Deep space folder. Dont change it.
 
-## How to implement new things
+## How to pull repo
 
-
+* create new folder
 * new git repo: git init
 * git remote add origin https://github.com/MohammedKevin420/AECProject.git
+* pull everything from master( git pull origin master);
+
+## How to implement new things
+
 * pull everything from master( git pull origin master);
 * create new feature branch and check it out( git checkout -b StoryId-Storyname , Example: 1-CreateGitRepo)
 * make changed in this branch and try to make commits as often as possible
