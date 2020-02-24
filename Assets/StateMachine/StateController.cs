@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
     StateMachine stateMachine;
     IState scene1;
+    LinkedList<IState> scenes = new LinkedList<IState>();
+    int currentState = 0;
     //IState sceneX;
     // Start is called before the first frame update
     void Start() {
         stateMachine = new StateMachine();
-        scene1 = GameObject.Find("/SceneOneState").GetComponent<SceneOneState>();
-        //sceneX = GameObject.Find("/SceneXState").GetComponent<SceneXState>();
-        Debug.Log(scene1);
-        stateMachine.ChangeState(scene1); // Select what scene should run in your case szene X
+        getStates();
+        NextState();
         stateMachine.RunState();
     }
 
@@ -24,8 +25,21 @@ public class StateController : MonoBehaviour
     }
 
     //Gets called by the state of the end of the state to change to next state
-    void nextState()
+    public void NextState()
     {
-
+        stateMachine.ChangeState(scenes.ElementAt(currentState));
+        currentState++;
+    }
+    public void getStates()
+    {
+        string[] stateNames = { "/SceneOneState" , "/SceneTwoState"};
+        foreach (var sceneName in stateNames)
+        {
+             scenes.AddLast(GameObject.Find(sceneName).GetComponent<IState>());
+        }
+        foreach (var scene in scenes)
+        {
+            scene.ExitState();
+        }
     }
 }
