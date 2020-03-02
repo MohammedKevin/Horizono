@@ -44,29 +44,11 @@ public class HighScoreTable : MonoBehaviour
             try{
                 h.Score = Convert.ToInt32(row[1]);
             }catch(Exception ex)
-            { Console.WriteLine("Exception"); }
+            { Console.WriteLine("Exception" + ex); }
             
             highScoreEntries.Add(h);
         }
 
-
-
-        /*
-        highScoreEntries = new List<HighScoreEntry>() 
-        {
-            new HighScoreEntry { Score = 9999, Name = "Anil"} ,
-            new HighScoreEntry { Score = 9282, Name = "Kevin"} ,
-            new HighScoreEntry { Score = 9942, Name = "Lukas"} ,
-            new HighScoreEntry { Score = 2419, Name = "Lucas"} ,
-            new HighScoreEntry { Score = 2390, Name = "Alexander"} ,
-            new HighScoreEntry { Score = 9282, Name = "Paul"} ,
-            new HighScoreEntry { Score = 2918, Name = "Patrick"} ,
-            new HighScoreEntry { Score = 4921, Name = "Kaindl"} ,
-            new HighScoreEntry { Score = 1318, Name = "Julian"} ,
-            new HighScoreEntry { Score = 8818, Name = "Gregor"} ,
-            new HighScoreEntry { Score = 9231, Name = "Test"} ,
-        };
-        */
         string[] cur = content.Split(',');
         highScoreEntryTransformList = new List<Transform>();
         highScoreEntries.Sort((first, second) => second.Score.CompareTo(first.Score));
@@ -115,12 +97,6 @@ public class HighScoreTable : MonoBehaviour
 
         transformlist.Add(entryTransform);
 
-    }
-
-
-    private class Highscores
-    {
-        public List<HighScoreEntry> highscoreEntryList;
     }
 
     [Serializable]
