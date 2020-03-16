@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotationScript : MonoBehaviour
 {
     private int rotateStepSize = 360 / 26;
-    public char input;
+    public char input = 'a';
     private bool isRotating = false;
     private float current = 0;
     private float goal = 0;
