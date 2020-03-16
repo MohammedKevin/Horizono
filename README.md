@@ -17,6 +17,9 @@ Everything added by us is in the Assest folder. In the asset folder is a Deep sp
 * create new feature branch and check it out( git checkout -b StoryId-Storyname , Example: 1-CreateGitRepo)
 * make changed in this branch and try to make commits as often as possible
 * when everything works and there are no error( git push origin StoryId-Storyname)
+* git checkout master
+* git pull origin master
+* git checkout Featurebranch
 * merge master into current branch( git merge master)
 * resolve all conflicts
 * push all changes ( git push origin StoryId-Storyname)
