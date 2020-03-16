@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11456630}
   - component: {fileID: 3310478355370052397}
   - component: {fileID: 1296574304578014525}
+  - component: {fileID: 2738115604401388983}
   m_Layer: 0
   m_Name: TrackingEntityPrefab
   m_TagString: Untagged
@@ -131,3 +132,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 32
+--- !u!222 &2738115604401388983
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106092}
+  m_CullTransparentMesh: 0

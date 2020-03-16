@@ -10,12 +10,12 @@ namespace DeepSpace.LaserTracking
 	public class TrackingEntity : MonoBehaviour
 	{
 		private int _trackID;
-		private Vector2 _absolutePosition;
-		private Vector2 _nextExpectedAbsolutePosition;
-		private Vector2 _relativePosition;
-		private Vector2 _orientation;
+		private Vector3 _absolutePosition;
+		private Vector3 _nextExpectedAbsolutePosition;
+		private Vector3 _relativePosition;
+		private Vector3 _orientation;
 		private float _speed;
-		private List<Vector2> _echoes = new List<Vector2>();
+		private List<Vector3> _echoes = new List<Vector3>();
 
 
 		/// <summary>
@@ -30,7 +30,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// The track's current position in meters (Pharus only)
 		/// </summary>
-		public Vector2 AbsolutePosition
+		public Vector3 AbsolutePosition
 		{
 			get { return _absolutePosition; }
 			set { _absolutePosition = value; }
@@ -39,7 +39,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// The position the track will be expected in the next frame (Pharus only)
 		/// </summary>
-		public Vector2 NextExpectedAbsolutePosition
+		public Vector3 NextExpectedAbsolutePosition
 		{
 			get { return _nextExpectedAbsolutePosition; }
 			set { _nextExpectedAbsolutePosition = value; }
@@ -48,7 +48,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// The track's current position in relative (0 - 1) coordinates
 		/// </summary>
-		public Vector2 RelativePosition
+		public Vector3 RelativePosition
 		{
 			get { return _relativePosition; }
 			set { _relativePosition = value; }
@@ -57,7 +57,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// The track's current heading (normalized). Valid if speed is above 0.25 m/s. (Pharus only)
 		/// </summary>
-		public Vector2 Orientation
+		public Vector3 Orientation
 		{
 			get { return _orientation; }
 			set { _orientation = value; }
@@ -75,7 +75,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// A list of the track's echoes (feet) as Vector2
 		/// </summary>
-		public List<Vector2> Echoes
+		public List<Vector3> Echoes
 		{
 			get { return _echoes; }
 			set { _echoes = value; }
@@ -86,7 +86,7 @@ namespace DeepSpace.LaserTracking
 			//Debug.Log("Position-x: " + position.x + ", Position-y: " + position.y);
 			//Debug.Log("x: " + position.x + ", y: " + position.y);
 			this.transform.localPosition = new Vector3(position.x, -1.7f, position.y);
-			this.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
+			//this.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
 			this.transform.localRotation = new Quaternion(0, 0, 0, 0);
 			//Debug.Log("transform-x: " + this.transform.position.x + ", transform-y: " + this.transform.position.y + ", transform-z: " + this.transform.position.z);
 		}
