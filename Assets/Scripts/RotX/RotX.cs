@@ -5,20 +5,35 @@ using UnityEngine;
 
 public class RotX
 {
-    public string encryptText(int selectedNumber, string input)
+    public static string encryptText(int selectedNumber, string input)
     {
         string output = "";
 
         for (int i = 0; i < input.Length; i++)
         {
-            if (Char.ToUpper(input[i]) >= 'A' && Char.ToUpper(input[i]) <= 'M')
-                output += Convert.ToChar(input[i] + selectedNumber);
-            else if (Char.ToUpper(input[i]) >= 'N' && Char.ToUpper(input[i]) <= 'Z')
-                output += Convert.ToChar(input[i] - selectedNumber);
+            if (input[i] >= 'A' && input[i] <= 'Z')
+            {
+                int x = input[i] - 'A';
+                x += selectedNumber;
+                x = x % 26;
+                output += Convert.ToChar('A' + x);
+            }
+            else if(input[i] >= 'a' && input[i] <= 'z')
+            {
+                int x = input[i] - 'a';
+                x += selectedNumber;
+                x = x % 26;
+                output += Convert.ToChar('a' + x);
+            }
             else
-                output += input[i];
+            {
+                output += "?";
+            }
         }
-
         return output;
+    }
+    public static string decryptText(int selecetedNumber, string input)
+    {
+        return encryptText(26 - selecetedNumber, input);
     }
 }
