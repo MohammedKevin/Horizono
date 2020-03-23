@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneOneState : MonoBehaviour, IState
+public class SceneThreeState : MonoBehaviour, IState
 {
     GameObject ownerObject;
-    private Animator animator;
 
     private void Start()
     {
         this.ownerObject = this.gameObject;
-        animator = GetComponent<Animator>();
     }
 
     public void ExitState()
@@ -25,13 +23,10 @@ public class SceneOneState : MonoBehaviour, IState
 
     public void RunState()
     {
-        animator.SetBool("IsReadyToMoveWall", true);
-        RotX.decryptText(1, RotX.encryptText(1, "aBcDeF1hijklmnopqrstuvwxyz"));
-        
     }
 
     public void Input(string input)
     {
-        
+
     }
 }
