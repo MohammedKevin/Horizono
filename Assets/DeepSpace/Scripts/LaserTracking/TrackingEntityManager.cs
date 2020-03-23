@@ -60,7 +60,7 @@ namespace DeepSpace.LaserTracking
 		public virtual void TrackAdded(TrackRecord trackRecord)
 		{
 			Vector2 position = _trackingReceiveHandler.TrackingSettings.GetScreenPositionFromRelativePosition(trackRecord.relPos.x, trackRecord.relPos.y);
-			GameObject trackInstance = GameObject.Instantiate(TrackingEntityPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity) as GameObject;
+			GameObject trackInstance = GameObject.Instantiate(TrackingEntityPrefab, new Vector3(position.x, -1.7f, position.y), Quaternion.identity) as GameObject;
 			trackInstance.transform.SetParent(trackSpawnParent);
 			trackInstance.name = string.Format("PharusTrack_{0}", trackRecord.trackID);
 
