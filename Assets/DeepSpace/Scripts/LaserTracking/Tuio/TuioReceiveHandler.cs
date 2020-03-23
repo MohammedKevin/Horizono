@@ -190,6 +190,7 @@ namespace DeepSpace.LaserTracking
 			Vector2 absPos = TrackingSettings.GetScreenPositionFromRelativePosition(tuioCursor.Position.X, tuioCursor.Position.Y);
 			track.currentPos.x = absPos.x;
 			track.currentPos.y = absPos.y;
+			track.currentPos.z = -1.7f;
 			track.expectPos.x = tuioCursor.Position.X + (tuioCursor.XSpeed * Time.deltaTime);
 			track.expectPos.y = tuioCursor.Position.Y + (tuioCursor.YSpeed * Time.deltaTime);
 			Vector2 orientation = (new Vector2(tuioCursor.XSpeed, tuioCursor.YSpeed)).normalized;
@@ -232,7 +233,7 @@ namespace DeepSpace.LaserTracking
 			{
 				track = new TrackRecord();
 				track.trackID = trackId;
-				track.echoes = new List<Vector2>();
+				track.echoes = new List<Vector3>();
 				_trackDict.Add(track.trackID, track);
 			}
 			else

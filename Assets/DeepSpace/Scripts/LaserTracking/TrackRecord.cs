@@ -15,19 +15,19 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// The track's current position in meters
 		/// </summary>
-		public Vector2 currentPos;
+		public Vector3 currentPos;
 		/// <summary>
 		/// The position the track will be expected in the next frame
 		/// </summary>
-		public Vector2 expectPos;
+		public Vector3 expectPos;
 		/// <summary>
 		/// The track's current position in relative coordinates (TUIO style)
 		/// </summary>
-		public Vector2 relPos;
+		public Vector3 relPos;
 		/// <summary>
 		/// The track's current heading (normalized). Valid if speed is above 0.25 m/s.
 		/// </summary>
-		public Vector2 orientation;
+		public Vector3 orientation;
 		/// <summary>
 		/// The track's current speed in meters per second
 		/// </summary>
@@ -39,7 +39,7 @@ namespace DeepSpace.LaserTracking
 		/// <summary>
 		/// List of CONFIRMED echoes that 'belong' to this track in relative coordinates (TUIO style)
 		/// </summary>
-		public List<Vector2> echoes;
+		public List<Vector3> echoes;
 	}
 }
 

@@ -77,7 +77,7 @@ namespace DeepSpace.LaserTracking
 					if (unknownTrack)
 					{
 						track = new TrackRecord();
-						track.echoes = new List<Vector2>();
+						track.echoes = new List<Vector3>();
 						track.trackID = tid;
 						_trackDict.Add(track.trackID, track);
 					}
@@ -88,7 +88,8 @@ namespace DeepSpace.LaserTracking
 
 					track.state = (TrackState)BytePackHelper.UnpackInt(messageBytes, ref i);
 					track.currentPos.x = BytePackHelper.UnpackFloat(messageBytes, ref i);
-					track.currentPos.y = BytePackHelper.UnpackFloat(messageBytes, ref i);
+					track.currentPos.z = BytePackHelper.UnpackFloat(messageBytes, ref i);
+					track.currentPos.y = -1.7f;
 					track.expectPos.x = BytePackHelper.UnpackFloat(messageBytes, ref i);
 					track.expectPos.y = BytePackHelper.UnpackFloat(messageBytes, ref i);
 					track.orientation.x = BytePackHelper.UnpackFloat(messageBytes, ref i);

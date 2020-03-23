@@ -16,7 +16,7 @@ namespace DeepSpace.LaserTracking
 		[Tooltip("This prefab will be spawned for each track.")]
 		public GameObject TrackingEntityPrefab = null;
 		public bool addUnknownTrackOnUpdate = true;
-		public Vector2 gridOffset = new Vector2(0.0f, 0.0f);
+		public Vector3 gridOffset = new Vector3(0.0f, 0.0f, 0.0f);
 
 		public List<TrackingEntity> TrackingEntityList
 		{
@@ -60,7 +60,7 @@ namespace DeepSpace.LaserTracking
 		public virtual void TrackAdded(TrackRecord trackRecord)
 		{
 			Vector2 position = _trackingReceiveHandler.TrackingSettings.GetScreenPositionFromRelativePosition(trackRecord.relPos.x, trackRecord.relPos.y);
-			GameObject trackInstance = GameObject.Instantiate(TrackingEntityPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity) as GameObject;
+			GameObject trackInstance = GameObject.Instantiate(TrackingEntityPrefab, new Vector3(position.x, -1.7f, position.y), Quaternion.identity) as GameObject;
 			trackInstance.transform.SetParent(trackSpawnParent);
 			trackInstance.name = string.Format("PharusTrack_{0}", trackRecord.trackID);
 
@@ -106,10 +106,10 @@ namespace DeepSpace.LaserTracking
 
 		protected virtual void ApplyTrackData(TrackingEntity trackingEntity, TrackRecord trackRecord)
 		{
-			trackingEntity.AbsolutePosition = new Vector2(trackRecord.currentPos.x - gridOffset.x, trackRecord.currentPos.y - gridOffset.y);
-			trackingEntity.NextExpectedAbsolutePosition = new Vector2(trackRecord.expectPos.x - gridOffset.x, trackRecord.expectPos.y - gridOffset.y);
-			trackingEntity.RelativePosition = new Vector2(trackRecord.relPos.x, trackRecord.relPos.y);
-			trackingEntity.Orientation = new Vector2(trackRecord.orientation.x, trackRecord.orientation.y);
+			trackingEntity.AbsolutePosition = new Vector3(trackRecord.currentPos.x - gridOffset.x, trackRecord.currentPos.y - gridOffset.y, trackRecord.currentPos.z - gridOffset.z);
+			trackingEntity.NextExpectedAbsolutePosition = new Vector3(trackRecord.expectPos.x - gridOffset.x, trackRecord.expectPos.y - gridOffset.y, trackRecord.expectPos.z - gridOffset.z);
+			trackingEntity.RelativePosition = new Vector3(trackRecord.relPos.x, trackRecord.relPos.y, trackRecord.relPos.z);
+			trackingEntity.Orientation = new Vector3(trackRecord.orientation.x, trackRecord.orientation.y, trackRecord.orientation.z);
 			trackingEntity.Speed = trackRecord.speed;
 			trackingEntity.Echoes.Clear();
 			trackRecord.echoes.AddRange(trackingEntity.Echoes);
