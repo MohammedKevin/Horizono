@@ -6,6 +6,7 @@ public class SceneOneState : MonoBehaviour, IState
 {
     GameObject ownerObject;
     private Animator animator;
+    public GameObject test;
 
     private void Start()
     {
