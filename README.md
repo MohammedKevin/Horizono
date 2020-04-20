@@ -25,7 +25,10 @@ Everything added by us is in the Assest folder. In the asset folder is a Deep sp
 * push all changes ( git push origin StoryId-Storyname)
 * switch to master( git checkout master)
 * merge feature to master ( git merge StoryId-Storyname)
-
+* git add .
+* git commit -m "<message>"
+* git push origin master
+    
 ## How to add your changes
 
 
