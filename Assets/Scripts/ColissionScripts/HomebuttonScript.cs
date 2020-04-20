@@ -22,7 +22,6 @@ public class HomebuttonScript : MonoBehaviour
         if (this.animator != null)
         {
             this.animator.SetTrigger("ColissionWithHomebuttonTrigger");
-            this.gameObject.SetActive(false);
         }
         else
             Debug.Log("Collided with homebutton but animator not found!");
