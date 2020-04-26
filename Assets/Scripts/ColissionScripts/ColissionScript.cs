@@ -58,26 +58,6 @@ public class ColissionScript : MonoBehaviour
     private IEnumerator OnTriggerEnter(Collider other)
     {
         _collided = true;
-        if (this.name == "UI_BTN_A")
-        {
-            var bubble = GameObject.Find("BubbleA");
-            bubble.transform.localScale = new Vector3(0.2f, 0.2f, 1f);
-        }
-        else if (this.name == "UI_BTN_B")
-        {
-            var bubble = GameObject.Find("BubbleB");
-            bubble.transform.localScale = new Vector3(0.2f, 0.2f, 1f);
-        }
-        else if (this.name == "UI_BTN_C")
-        {
-            var bubble = GameObject.Find("BubbleC");
-            bubble.transform.localScale = new Vector3(0.2f, 0.2f, 1f);
-        }
-        else if (this.name == "UI_BTN_D")
-        {
-            var bubble = GameObject.Find("BubbleD");
-            bubble.transform.localScale = new Vector3(0.2f, 0.2f, 1f);
-        }
 
         yield return new WaitForSeconds(5); // Wait for 5 seconds to check, if someone is still standing on the button.
         if (_collided == true) // check, if someone is still on the button
