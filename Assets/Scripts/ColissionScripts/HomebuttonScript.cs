@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HomebuttonScript : MonoBehaviour
 {
-    private Animator animator;
+    private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInParent<Animator>();
+        _animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class HomebuttonScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (this.animator != null)
+        if (this._animator != null)
         {
-            this.animator.SetTrigger("ColissionWithHomebuttonTrigger");
+            this._animator.SetTrigger("ColissionWithHomebuttonTrigger");
         }
         else
             Debug.Log("Collided with homebutton but animator not found!");
