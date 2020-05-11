@@ -21,5 +21,5 @@ Material:
     m_TexEnvs: []
     m_Floats: []
     m_Colors:
-    - Color_AFD2B41C: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+    - Color_AFD2B41C: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0}
     - Color_BE7E3521: {r: 1, g: 0, b: 0.8666667, a: 0}
