@@ -684,7 +684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &422517004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4850,18 +4850,6 @@ RectTransform:
   m_AnchoredPosition: {x: -240, y: 216}
   m_SizeDelta: {x: 336.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8306606062830847193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306606062830847195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8306606062830847195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,7 +4860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8306606062830847192}
   - component: {fileID: 8306606062830847198}
-  - component: {fileID: 8306606062830847193}
   - component: {fileID: 8306606062830847196}
   m_Layer: 5
   m_Name: posText
@@ -4971,8 +4958,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8306606063316051385}
   - component: {fileID: 8306606063316051384}
-  - component: {fileID: 8306606063316051387}
-  - component: {fileID: 8306606063316051386}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5021,30 +5006,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.68, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8306606063316051386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306606063316051381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8306606063316051387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306606063316051381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8306606063316915084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5264,7 +5225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8306606063691663849}
   - component: {fileID: 8306606063691663855}
-  - component: {fileID: 8306606063691663854}
   - component: {fileID: 8306606063691663850}
   m_Layer: 5
   m_Name: titleText
@@ -5314,7 +5274,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2ed6d9f740711e34a99531d4cb7e60ec, type: 3}
-    m_FontSize: 80
+    m_FontSize: 79
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -5326,18 +5286,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: HighScores
---- !u!114 &8306606063691663854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306606063691663848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &8306606063691663855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5550,7 +5498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8306606064062142381}
   - component: {fileID: 8306606064062142387}
-  - component: {fileID: 8306606064062142386}
   - component: {fileID: 8306606064062142382}
   m_Layer: 5
   m_Name: posText
@@ -5612,18 +5559,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
---- !u!114 &8306606064062142386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306606064062142380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &8306606064062142387
 CanvasRenderer:
   m_ObjectHideFlags: 0
