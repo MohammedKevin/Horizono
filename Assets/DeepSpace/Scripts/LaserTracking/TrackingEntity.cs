@@ -101,5 +101,10 @@ namespace DeepSpace.LaserTracking
 		//		Gizmos.DrawWireSphere(UnityTracking.TrackingAdapter.GetScreenPositionFromRelativePosition(echo.x, echo.y), 12f);
 		//	}
 		//}
+
+		public TrackingEntity GetObjectAsTrackingEntity()
+		{
+			return this;
+		}
 	}
 }
