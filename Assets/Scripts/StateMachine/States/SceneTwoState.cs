@@ -37,16 +37,30 @@ public class SceneTwoState : MonoBehaviour, IState
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
-        this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter).gameObject.GetComponent<Text>().color = Color.green;
-        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc).gameObject.GetComponent<Text>().color = Color.green;
+        this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter.ToUpper()).gameObject.GetComponent<Text>().color = Color.green;
+        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc.ToUpper()).gameObject.GetComponent<Text>().color = Color.green;
     }
     public void colorOutLetter()
     {
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
-        this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter).gameObject.GetComponent<Text>().color = Color.white;
-        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc).gameObject.GetComponent<Text>().color = Color.white;
+        this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter.ToUpper()).gameObject.GetComponent<Text>().color = Color.white;
+        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc.ToUpper()).gameObject.GetComponent<Text>().color = Color.white;
         this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text = currentLetterEnc;
+    }
+    public void removeLetter()
+    {
+        string text = this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text;
+        this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text = text[text.Length - 1].ToString();
+        this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text = text.Remove(text.Length - 1);
+        if (text.Length < 1)
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("FinishedEnc");
+        }
+    }
+    public void addLetter()
+    {
+        this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text + this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
     }
 }
