@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SceneTwoState : MonoBehaviour, IState
 {
     GameObject ownerObject;
+    int currentX = 10;
 
     private void Start()
     {
@@ -34,11 +35,15 @@ public class SceneTwoState : MonoBehaviour, IState
     public void colorInLetter()
     {
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        string currentLetterEnc = RotX.encryptText(currentX ,currentLetter);
         this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter).gameObject.GetComponent<Text>().color = Color.green;
+        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc).gameObject.GetComponent<Text>().color = Color.green;
     }
     public void colorOutLetter()
     {
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        string currentLetterDec = RotX.decryptText(currentX, currentLetter);
         this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter).gameObject.GetComponent<Text>().color = Color.white;
+        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterDec).gameObject.GetComponent<Text>().color = Color.white;
     }
 }
