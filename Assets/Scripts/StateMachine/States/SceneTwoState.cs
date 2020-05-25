@@ -52,15 +52,22 @@ public class SceneTwoState : MonoBehaviour, IState
     public void removeLetter()
     {
         string text = this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text;
+        if (text.Length < 1) return;
         this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text = text[text.Length - 1].ToString();
         this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text = text.Remove(text.Length - 1);
-        if (text.Length < 1)
-        {
-            gameObject.GetComponent<Animator>().SetTrigger("FinishedEnc");
-        }
     }
     public void addLetter()
     {
+        Debug.Log("AddLetter()");
         this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text + this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
+        
+        //Check if Enc is done
+        string text = this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text;
+        if (text.Length < 1)
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("FinishedEnc");
+            gameObject.GetComponent<Animator>().SetBool("EncFinished", true);
+            return;
+        }
     }
 }
