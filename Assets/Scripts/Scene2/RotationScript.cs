@@ -28,6 +28,7 @@ public class RotationScript : MonoBehaviour
         double goal = (letter - 'a') * rotateStepSize;
         if (current > goal -0.1 && current < goal + 0.1)
         {
+            gameObject.GetComponentInParent<Animator>().SetTrigger("StartMoveLetter");
             return;
         }
         this.transform.eulerAngles = new Vector3

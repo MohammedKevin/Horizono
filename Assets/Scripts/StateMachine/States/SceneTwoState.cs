@@ -44,8 +44,9 @@ public class SceneTwoState : MonoBehaviour, IState
     {
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
-        string currentLetterDec = RotX.encryptText(rot, currentLetter);
+        string currentLetterEnc = RotX.encryptText(rot, currentLetter);
         this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter).gameObject.GetComponent<Text>().color = Color.white;
-        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterDec).gameObject.GetComponent<Text>().color = Color.white;
+        this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc).gameObject.GetComponent<Text>().color = Color.white;
+        this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text = currentLetterEnc;
     }
 }
