@@ -19,6 +19,7 @@ public class HomebuttonScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("There has been a colission!");
         if (this._animator != null)
         {
             this._animator.SetTrigger("ColissionWithHomebuttonTrigger");

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DeepSpace.LaserTracking;
+using System;
 
 public class PacketScript : MonoBehaviour
 {
     private int _packetId;
     private Vector3 _absolutePosition;
-    private bool _stuckToTrackEntity;
     private Collider _collider; // The TrackingEntity, that collides with this packet.
 
     public int PacketId
@@ -25,16 +25,29 @@ public class PacketScript : MonoBehaviour
     {
         this._packetId = packetId;
         this._absolutePosition = pos;
-        this._stuckToTrackEntity = false;
         this._collider = null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_collider == null)
+        try
         {
-            this._collider = other;
+            TrackingEntity trackingEntity = GameObject.Find(other.gameObject.name).GetComponent<TrackingEntity>();
+
+            if (_collider == null)
+            {
+                if (other.gameObject.name.Contains("PharusTrack_") && !trackingEntity.HasPacketOnTrackingEntity)
+                {
+                    this._collider = other;
+                    trackingEntity.HasPacketOnTrackingEntity = true;
+                }
+            }
+        } catch (Exception ex)
+        {
+            Debug.LogError(ex.Message);
         }
+        
+        
     }
 
     // Update is called once per frame

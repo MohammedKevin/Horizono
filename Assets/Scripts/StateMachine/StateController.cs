@@ -32,7 +32,7 @@ public class StateController : MonoBehaviour
     }
     public void getStates()
     {
-        string[] stateNames = { "/SceneOneState" , "/SceneTwoState"};
+        string[] stateNames = { /*"/SceneOneState" , "/SceneTwoState",*/ "/SceneThreeState" };
         foreach (var sceneName in stateNames)
         {
              scenes.AddLast(GameObject.Find(sceneName).GetComponent<IState>());
