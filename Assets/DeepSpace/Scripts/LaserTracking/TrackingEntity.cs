@@ -14,9 +14,18 @@ namespace DeepSpace.LaserTracking
 		private Vector3 _nextExpectedAbsolutePosition;
 		private Vector3 _relativePosition;
 		private Vector3 _orientation;
+		private bool _hasPacketOnTrackingEntity = false;
 		private float _speed;
 		private List<Vector3> _echoes = new List<Vector3>();
 
+		/// <summary>
+		/// This field tells you, if you already have a packet sticking on this object. Is required only in Scene 3 of the school project of HTL Leonding students in cooperation with Ars Electronica Center
+		/// </summary>
+		public bool HasPacketOnTrackingEntity
+		{
+			get { return _hasPacketOnTrackingEntity; }
+			set { _hasPacketOnTrackingEntity = value; }
+		}
 
 		/// <summary>
 		/// TrackID corresponds to the entityId of the tracking service (TUIO sessionID / Pharus trackID).
@@ -101,5 +110,10 @@ namespace DeepSpace.LaserTracking
 		//		Gizmos.DrawWireSphere(UnityTracking.TrackingAdapter.GetScreenPositionFromRelativePosition(echo.x, echo.y), 12f);
 		//	}
 		//}
+
+		public TrackingEntity GetObjectAsTrackingEntity()
+		{
+			return this;
+		}
 	}
 }
