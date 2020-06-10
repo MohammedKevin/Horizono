@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/DeepSpace/Demo/Scenes/WallFloorCombinedScene.unity
     guid: a99329fccf53b6d43a07ed2700dbdc86
   - enabled: 0
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DeepSpace/Demo/Scenes/PharusTracklinkScene.unity
     guid: 88481ed6e22ab6c43be02b614b302fee
+  - enabled: 1
+    path: Assets/Scenes/AECProject.unity
+    guid: 36e83009cde3c0f4f90aaf3399f54775
   m_configObjects: {}
