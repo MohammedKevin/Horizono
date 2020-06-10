@@ -14,7 +14,7 @@ public class ColissionScript : MonoBehaviour
     private ButtonController _buttonController;
     private Animator _animator;
     private bool _collided = false;
-    private int _chosenMessage;
+    private string _chosenMessage;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,28 +65,32 @@ public class ColissionScript : MonoBehaviour
             var messageBox = GameObject.Find("PhoneMessage").GetComponent<Text>();
             if (this.name == "UI_BTN_A")
             {
-                _chosenMessage = 1;
-                messageBox.text = MESSAGE_A;
+                _chosenMessage = MESSAGE_A;
+                messageBox.text = _chosenMessage;
             }
             else if (this.name == "UI_BTN_B")
             {
-                _chosenMessage = 2;
-                messageBox.text = MESSAGE_B;
+                _chosenMessage = MESSAGE_B;
+                messageBox.text = _chosenMessage;
             }
             else if (this.name == "UI_BTN_C")
             {
-                _chosenMessage = 3;
-                messageBox.text = MESSAGE_C;
+                _chosenMessage = MESSAGE_C;
+                messageBox.text = _chosenMessage;
             }
             else if (this.name == "UI_BTN_D")
             {
-                _chosenMessage = 4;
-                messageBox.text = MESSAGE_D;
+                _chosenMessage = MESSAGE_D;
+                messageBox.text = _chosenMessage;
             }
-            Debug.Log(_chosenMessage);
+            Debug.Log("Chosen Message: " + _chosenMessage);
             if (this._animator != null)
             {
                 this._animator.SetTrigger("ChooseMessageTrigger");
+                var textDec = GameObject.Find("TextDec");
+                Debug.Log("test");
+                if (textDec != null && textDec is Text)
+                    Debug.Log("Is a text");
             }
             else
                 Debug.Log("Message Chosen but animator not found!");

@@ -8,6 +8,8 @@ public class RotationScript : MonoBehaviour
     public char input = 'd';
     private double current = 0;
     private double goal = 0;
+    public bool readyToTurn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class RotationScript : MonoBehaviour
     }
     void Rotate(char letter)
     {
+        if (!readyToTurn)
+            return;
         double goal = (letter - 'a') * rotateStepSize;
         if (current > goal -0.1 && current < goal + 0.1)
         {

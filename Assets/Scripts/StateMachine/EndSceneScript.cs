@@ -7,6 +7,6 @@ public class EndSceneScript : MonoBehaviour
     public StateController stateController;
     public void EndSceneEvent()
     {
-        //stateController.NextState();
+        stateController.NextState();
     }
 }

@@ -12,11 +12,12 @@ public class StateMachine
         previousState = currentState;
         currentState = newstate;
         currentState.LoadState();
+        currentState.RunState();
     }
 
     public void RunState()
     {
-        currentState.RunState(); ;
+        currentState.RunState();
     }
     public void ExitState()
     {

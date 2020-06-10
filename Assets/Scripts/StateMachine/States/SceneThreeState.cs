@@ -5,10 +5,13 @@ using UnityEngine;
 public class SceneThreeState : MonoBehaviour, IState
 {
     GameObject ownerObject;
+    SceneFiveState scene5;
 
     private void Start()
     {
         this.ownerObject = this.gameObject;
+        scene5 =  GameObject.Find("SceneFiveState").GetComponent<SceneFiveState>();
+
     }
 
     public void ExitState()
@@ -19,6 +22,7 @@ public class SceneThreeState : MonoBehaviour, IState
     public void LoadState()
     {
         ownerObject.SetActive(true);
+        scene5.LoadState();
     }
 
     public void RunState()

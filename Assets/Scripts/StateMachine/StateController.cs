@@ -15,7 +15,6 @@ public class StateController : MonoBehaviour
         stateMachine = new StateMachine();
         getStates();
         NextState();
-        stateMachine.RunState();
     }
 
     // Update is called once per frame
@@ -32,7 +31,7 @@ public class StateController : MonoBehaviour
     }
     public void getStates()
     {
-        string[] stateNames = {/*"/SceneOneState", "/SceneTwoState",*/ "/SceneThreeState"};
+        string[] stateNames = {"/SceneOneState", "/SceneTwoState", "/SceneThreeState", "/SceneFiveState" };
         foreach (var sceneName in stateNames)
         {
              scenes.AddLast(GameObject.Find(sceneName).GetComponent<IState>());
