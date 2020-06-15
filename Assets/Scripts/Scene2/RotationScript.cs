@@ -7,7 +7,6 @@ public class RotationScript : MonoBehaviour
     private double rotateStepSize = 13.84615;
     public char input = 'd';
     private double current = 0;
-    private double goal = 0;
     public bool readyToTurn = false;
 
     // Start is called before the first frame update

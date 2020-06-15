@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SceneTwoState : MonoBehaviour, IState
 {
     GameObject ownerObject;
-    int currentX = 10;
+    public GameObject data;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class SceneTwoState : MonoBehaviour, IState
     public void LoadState()
     {
         ownerObject.SetActive(true);
+        this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text = data.GetComponent<Data>().Message;
     }
 
     public void RunState()
