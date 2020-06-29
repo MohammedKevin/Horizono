@@ -14,6 +14,7 @@ public class PacketFactoryScript : MonoBehaviour
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
     private readonly object packetsLock = new object();
+    private readonly object listLock = new object();
 
     // Packet Prefabs
     public GameObject BluePacketPrefab;
@@ -111,23 +112,17 @@ public class PacketFactoryScript : MonoBehaviour
         if (prefab == null) return;
         if (_packetOnSpawnFloor < 3)
         {
-            lock (packetsLock)
-            {
-                if (_packetOnSpawnFloor < 3)
-                {
-                    GameObject packet = GameObject.Instantiate(prefab, new Vector3(), Quaternion.identity);
-                    packet.transform.SetParent(parent.transform, false);
-                    this._totalPacketCount++;
-                    Debug.Log("Total amount of packets: " + _totalPacketCount);
-                }
-            }
+            GameObject packet = GameObject.Instantiate(prefab, new Vector3(), Quaternion.identity);
+            packet.transform.SetParent(parent.transform, false);
+            this._totalPacketCount++;
+            Debug.Log("Total amount of packets: " + _totalPacketCount);
         }
     }
 
     private GameObject GetFirstOfListAndRemoveIt()
     {
         if (prefabs.Count == 0) return null;
-        lock (packetsLock)
+        lock (listLock)
         {
             var go = prefabs[0]; // go stands for Gameobject
             prefabs.RemoveAt(0);
