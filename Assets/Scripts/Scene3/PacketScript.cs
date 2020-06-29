@@ -8,7 +8,7 @@ public class PacketScript : MonoBehaviour
 {
     private int _packetId;
     private Vector3 _absolutePosition;
-    private Collider _collider; // The TrackingEntity, that collides with this packet.
+    private TrackingEntity _collider; // The TrackingEntity, that collides with this packet.
 
     public int PacketId
     {
@@ -19,6 +19,12 @@ public class PacketScript : MonoBehaviour
     {
         get { return _absolutePosition; }
         set { _absolutePosition = value; }
+    }
+
+    public TrackingEntity Collider
+    {
+        get { return _collider; }
+        set { _collider = value; }
     }
 
     public PacketScript(int packetId, Vector3 pos)
@@ -38,24 +44,40 @@ public class PacketScript : MonoBehaviour
             {
                 if (other.gameObject.name.Contains("PharusTrack_") && !trackingEntity.HasPacketOnTrackingEntity)
                 {
-                    this._collider = other;
+                    this._collider = trackingEntity;
                     trackingEntity.HasPacketOnTrackingEntity = true;
                 }
             }
         } catch (Exception ex)
         {
             Debug.LogError(ex.Message);
-        }
-        
-        
+        }        
     }
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (this._collider != null)
+    //    {
+    //        this._collider.HasPacketOnTrackingEntity = false;
+    //        this._collider = null;
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
     {
         if (this._collider != null)
         {
-            this.transform.position = _collider.transform.position;
-        }
+            if (GameObject.Find(_collider.name).GetComponent<TrackingEntity>() == null)
+            {
+                _collider = null;
+            }
+            else
+            {
+                //Debug.Log(_collider.AbsolutePosition);
+                this.transform.position = _collider.transform.position;
+                //this.transform.localPosition = new Vector3(_collider.transform.localPosition.x, _collider.transform.localPosition.y, 0);
+            }            
+        }        
     }
 }

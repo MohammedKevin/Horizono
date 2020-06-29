@@ -93,7 +93,7 @@ namespace DeepSpace.LaserTracking
 		public virtual void SetPosition(Vector2 position)
 		{
 			//this.transform.localPosition = new Vector3(position.x, -1.7f, position.y);
-			this.transform.localPosition = new Vector3(position.x - (6467/2), position.y - (3595/2), 0f);
+			this.transform.localPosition = new Vector3(position.x - (6467/2), position.y - (3595/2), -0.1f);
 			this.transform.localScale = new Vector3(1, 1, 1);
 			this.transform.rotation = new Quaternion(0, 0, 0, 0);
 			//Debug.Log("transform-x: " + this.transform.position.x + ", transform-y: " + this.transform.position.y + ", transform-z: " + this.transform.position.z);

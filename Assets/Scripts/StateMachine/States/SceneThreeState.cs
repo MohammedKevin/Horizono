@@ -10,7 +10,7 @@ public class SceneThreeState : MonoBehaviour, IState
     private void Start()
     {
         this.ownerObject = this.gameObject;
-        scene5 =  GameObject.Find("SceneFiveState").GetComponent<SceneFiveState>();
+        //scene5 =  GameObject.Find("SceneFiveState").GetComponent<SceneFiveState>();
 
     }
 
@@ -22,7 +22,7 @@ public class SceneThreeState : MonoBehaviour, IState
     public void LoadState()
     {
         ownerObject.SetActive(true);
-        scene5.LoadState();
+        //scene5.LoadState();
     }
 
     public void RunState()
