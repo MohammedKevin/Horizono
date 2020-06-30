@@ -26,7 +26,7 @@ public class SceneTwoState : MonoBehaviour, IState
 
     public void RunState()
     {
-        this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().readyToTurn = true;
+        
     }
 
     public void Input(string input)

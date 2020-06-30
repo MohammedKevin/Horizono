@@ -2,7 +2,7 @@
 
 ## Stucture
 
-Everything added by us is in the Assest folder. In the asset folder is a Deep space folder. Dont change it.
+Everything added by us is in the Assest folder. In the asset folder is a Deep space folder. In this folder you can find the DevKit for the DeepSpace of the Ars Electronica Center. Don't change it. Don't even touch it!
 
 ## How to pull repo
 
