@@ -36,6 +36,7 @@ public class SceneTwoState : MonoBehaviour, IState
 
     public void colorInLetter()
     {
+        Debug.Log("colorInLetter()/in scene 2");
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
@@ -44,6 +45,7 @@ public class SceneTwoState : MonoBehaviour, IState
     }
     public void colorOutLetter()
     {
+        Debug.Log("colorOutLetter()/in scene 2");
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
