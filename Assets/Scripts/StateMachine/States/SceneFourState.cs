@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneFiveState : MonoBehaviour, IState
+public class SceneFourState : MonoBehaviour, IState
 {
     GameObject ownerObject;
     private Animator animator;
