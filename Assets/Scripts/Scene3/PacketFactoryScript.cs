@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
+using System.Threading.Tasks;
 
 public class PacketFactoryScript : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class PacketFactoryScript : MonoBehaviour
     private int _packetOnSpawnFloor = 0;
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
+
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
+    private readonly object counterLock = new object();
 
     // Packet Prefabs
     public GameObject BluePacketPrefab;
@@ -26,6 +29,7 @@ public class PacketFactoryScript : MonoBehaviour
     public GameObject Spawn3;
 
     private List<GameObject> prefabs;
+    private bool isFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,19 @@ public class PacketFactoryScript : MonoBehaviour
                 _stopWatch.Stop();
                 TimeSpan ts = _stopWatch.Elapsed;
                 GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                Invoke("Update", 5);
+                //Wait(3000);
+                if (isFinished)
+                {
+                    isFinished = false;
+                    Task.Run(async () =>
+                    {
+                        await Task.Delay(5000);
+                        GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
+                        GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
+                    });
+                }
+                
             }
         }
         
@@ -61,6 +78,12 @@ public class PacketFactoryScript : MonoBehaviour
             StartCoroutine(WaitAndInstantiate());
         }
     }
+
+    /*private IEnumerator Wait(int v)
+    {
+        yield return WaitForSeconds(3000);
+        int i = 0;
+    }*/
 
     #region Trigger Methods
 
@@ -112,10 +135,16 @@ public class PacketFactoryScript : MonoBehaviour
         if (prefab == null) return;
         if (_packetOnSpawnFloor < 3)
         {
-            GameObject packet = GameObject.Instantiate(prefab, new Vector3(), Quaternion.identity);
-            packet.transform.SetParent(parent.transform, false);
-            this._totalPacketCount++;
-            Debug.Log("Total amount of packets: " + _totalPacketCount);
+            lock (counterLock)
+            {
+                if ( _packetOnSpawnFloor < 3)
+                {
+                    GameObject packet = GameObject.Instantiate(prefab, new Vector3(), Quaternion.identity);
+                    packet.transform.SetParent(parent.transform, false);
+                    this._totalPacketCount++;
+                    Debug.Log("Total amount of packets: " + _totalPacketCount);
+                }
+            }            
         }
     }
 
