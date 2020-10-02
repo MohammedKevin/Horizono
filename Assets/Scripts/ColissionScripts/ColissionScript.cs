@@ -25,34 +25,7 @@ public class ColissionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (_buttonController != null)
-        {
-            var lightbulpA = GameObject.Find("UI_Lightbulp_A").GetComponent<Image>();
-            var lightbulpB = GameObject.Find("UI_Lightbulp_B").GetComponent<Image>();
 
-            int btnWithMaxPeople = _buttonController.GetMax();
-
-            if (_buttonController.CountA == 0 && _buttonController.CountB == 0)
-            {
-                lightbulpA.color = Color.white;
-                lightbulpB.color = Color.white;
-            }
-            else if (_buttonController.CountA == _buttonController.CountB && _buttonController.CountA > 0)
-            {
-                lightbulpA.color = Color.yellow;
-                lightbulpB.color = Color.yellow;
-            }
-            else if (_buttonController.CountA > _buttonController.CountB)
-            {
-                lightbulpA.color = Color.green;
-                lightbulpB.color = Color.red;
-            }
-            else if (_buttonController.CountA < _buttonController.CountB)
-            {
-                lightbulpA.color = Color.red;
-                lightbulpB.color = Color.green;
-            }
-        }*/
     }
 
     private IEnumerator OnTriggerEnter(Collider other)
