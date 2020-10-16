@@ -769,6 +769,12 @@ Transform:
   m_Father: {fileID: 828747715}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &305781766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2055330167982833123, guid: f098f80144e76554e8b6d601377b374f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1840484235858543687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354467520
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +808,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &359762580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2055330167175621578, guid: f098f80144e76554e8b6d601377b374f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1840484235858543687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &434291781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1552,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957908876}
   m_Mesh: {fileID: 4300002, guid: 815d3a3aeb42db4408f06ea1ede5a8bf, type: 3}
+--- !u!1 &961373427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 961373428}
+  - component: {fileID: 961373429}
+  m_Layer: 0
+  m_Name: PhoneNetworkTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &961373428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961373427}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.7, z: -0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 359762580}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961373429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961373427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed457f359c06344a83b7efc82b4cb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  udpManager: {fileID: 1254551353}
+  floorNetworkHandler: {fileID: 8390915197550359406}
+  moveTrans: {fileID: 305781766}
+  networkId: PhoneTrans
 --- !u!1 &970272897
 GameObject:
   m_ObjectHideFlags: 0
