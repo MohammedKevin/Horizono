@@ -8,11 +8,6 @@ public class CountdownController : MonoBehaviour
     public int countdownTime;
     public Text countdownDisplay;
 
-    private void Start()
-    {
-        countdownDisplay = GameObject.Find("CountdownText").GetComponent<Text>();
-    }
-
     public void StartCountDown()
     {
         StartCoroutine(CountdownStart());
