@@ -30,5 +30,7 @@ public class CountdownController : MonoBehaviour
         countdownDisplay.text = "GO!";
         PacketFactoryScript pf = GameObject.Find("PacketFloor").GetComponent<PacketFactoryScript>();
         pf.StartGame();
+        yield return new WaitForSeconds(1);
+        countdownDisplay.gameObject.SetActive(false);
     }
 }
