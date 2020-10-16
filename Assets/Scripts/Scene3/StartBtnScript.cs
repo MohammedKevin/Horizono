@@ -27,8 +27,8 @@ public class StartBtnScript : MonoBehaviour
 
             if (_collided)
             {
-                PacketFactoryScript pf = GameObject.Find("PacketFloor").GetComponent<PacketFactoryScript>();
-                pf.StartGame();
+                CountdownController countdown = GameObject.Find("CountdownCanvas").GetComponent<CountdownController>();
+                countdown.StartCountDown();
                 _gameStarted = true;
                 this.gameObject.SetActive(false);
                 //this.GetComponent<Renderer>().SetActive
