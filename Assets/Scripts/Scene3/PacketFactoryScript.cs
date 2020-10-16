@@ -14,6 +14,7 @@ public class PacketFactoryScript : MonoBehaviour
     private int _packetOnSpawnFloor = 0;
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
+    public Text Timer;
 
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
@@ -53,6 +54,7 @@ public class PacketFactoryScript : MonoBehaviour
     {
         if (startGame)
         {
+            Timer.text = $"{_stopWatch.Elapsed.Minutes:d2}:{_stopWatch.Elapsed.Seconds:d2}:{_stopWatch.Elapsed.Milliseconds:d3}";
             if (_actualPoints >= 30)
             {
                 if (_stopWatch.IsRunning)
