@@ -14,6 +14,7 @@ public class PacketFactoryScript : MonoBehaviour
     private int _packetOnSpawnFloor = 0;
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
+    public Text Timer;
 
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
@@ -30,11 +31,12 @@ public class PacketFactoryScript : MonoBehaviour
 
     private List<GameObject> prefabs;
     private bool isFinished = false;
+    private bool startGame = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        _stopWatch = new Stopwatch();
+        /*_stopWatch = new Stopwatch();
         _stopWatch.Start();
         prefabs = new List<GameObject> { BluePacketPrefab, RedPacketPrefab, GreenPacketPrefab, RedPacketPrefab, GreenPacketPrefab, BluePacketPrefab, BluePacketPrefab, BluePacketPrefab,
             RedPacketPrefab, GreenPacketPrefab, BluePacketPrefab, GreenPacketPrefab, BluePacketPrefab, RedPacketPrefab, RedPacketPrefab, BluePacketPrefab, BluePacketPrefab, GreenPacketPrefab,
@@ -44,38 +46,42 @@ public class PacketFactoryScript : MonoBehaviour
         // Insantiating Packets
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn1);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
-        InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);
+        InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_actualPoints >= 30)
+        if (startGame)
         {
-            if (_stopWatch.IsRunning)
+            Timer.text = $"{_stopWatch.Elapsed.Minutes:d2}:{_stopWatch.Elapsed.Seconds:d2}:{_stopWatch.Elapsed.Milliseconds:d3}";
+            if (_actualPoints >= 30)
             {
-                _stopWatch.Stop();
-                TimeSpan ts = _stopWatch.Elapsed;
-                GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                Invoke("Update", 5);
-                //Wait(3000);
-                if (isFinished)
+                if (_stopWatch.IsRunning)
                 {
-                    isFinished = false;
-                    Task.Run(async () =>
+                    _stopWatch.Stop();
+                    TimeSpan ts = _stopWatch.Elapsed;
+                    GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                    Invoke("Update", 5);
+                    //Wait(3000);
+                    if (isFinished)
                     {
-                        await Task.Delay(5000);
-                        GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
-                        GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
-                    });
+                        isFinished = false;
+                        Task.Run(async () =>
+                        {
+                            await Task.Delay(5000);
+                            GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
+                            GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
+                        });
+                    }
+
                 }
-                
             }
-        }
-        
-        if (_packetOnSpawnFloor < 3)
-        {
-            StartCoroutine(WaitAndInstantiate());
+
+            if (_packetOnSpawnFloor < 3)
+            {
+                StartCoroutine(WaitAndInstantiate());
+            }
         }
     }
 
@@ -106,6 +112,22 @@ public class PacketFactoryScript : MonoBehaviour
     }
 
     #endregion
+
+    public void StartGame()
+    {
+        startGame = true;
+        _stopWatch = new Stopwatch();
+        _stopWatch.Start();
+        prefabs = new List<GameObject> { BluePacketPrefab, RedPacketPrefab, GreenPacketPrefab, RedPacketPrefab, GreenPacketPrefab, BluePacketPrefab, BluePacketPrefab, BluePacketPrefab,
+            RedPacketPrefab, GreenPacketPrefab, BluePacketPrefab, GreenPacketPrefab, BluePacketPrefab, RedPacketPrefab, RedPacketPrefab, BluePacketPrefab, BluePacketPrefab, GreenPacketPrefab,
+            RedPacketPrefab, GreenPacketPrefab, GreenPacketPrefab, BluePacketPrefab, RedPacketPrefab, GreenPacketPrefab, RedPacketPrefab, GreenPacketPrefab, BluePacketPrefab, RedPacketPrefab,
+            RedPacketPrefab, GreenPacketPrefab};
+
+        // Insantiating Packets
+        InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn1);
+        InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
+        InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);
+    }
 
     private IEnumerator WaitAndInstantiate()
     {
