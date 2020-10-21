@@ -2419,6 +2419,11 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8475755058378626430, guid: 00c8a2e2d601e7a41817fd5191073a92,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3865395792667390778, guid: 00c8a2e2d601e7a41817fd5191073a92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3942,6 +3947,11 @@ PrefabInstance:
       propertyPath: stateController
       value: 
       objectReference: {fileID: 3671130013948722840}
+    - target: {fileID: 1354855151672341959, guid: 6b4d5afe175980149884f972e1e02c7f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.81003
+      objectReference: {fileID: 0}
     - target: {fileID: 1354855152058520960, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3961,6 +3971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354855151672341952, guid: 6b4d5afe175980149884f972e1e02c7f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1354855151963178147, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
@@ -5013,6 +5028,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneFiveState
       objectReference: {fileID: 0}
+    - target: {fileID: 6437422407015446814, guid: 9d0a8647aa367a3468e082d03a0711ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6437422407015446808, guid: 9d0a8647aa367a3468e082d03a0711ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5123,6 +5143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneThreeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561317150784903878, guid: 9ab733aea48d5f64c801815b5010f584,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561317150784903897, guid: 9ab733aea48d5f64c801815b5010f584,
         type: 3}
