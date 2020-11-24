@@ -64,16 +64,12 @@ public class PacketFactoryScript : MonoBehaviour
                     GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
                     Invoke("Update", 5);
                     //Wait(3000);
-                    if (isFinished)
+                    Task.Run(async () =>
                     {
-                        isFinished = false;
-                        Task.Run(async () =>
-                        {
-                            await Task.Delay(5000);
-                            GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
-                            GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
-                        });
-                    }
+                        await Task.Delay(5000);
+                        GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
+                        GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
+                    });
 
                 }
             }
