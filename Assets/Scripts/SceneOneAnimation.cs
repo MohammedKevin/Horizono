@@ -16,13 +16,5 @@ public class SzeneOneAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isAnimating)
-        {
-            animator.SetBool("IsReadyToMoveWall", true);
-        }
-        else
-        {
-            animator.SetBool("IsReadyToMoveWall", false);
-        }
     }
 }
