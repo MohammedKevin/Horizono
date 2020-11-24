@@ -28,9 +28,6 @@ public class SceneOneState : MonoBehaviour, IState
 
     public void RunState()
     {
-        animator.SetBool("IsReadyToMoveWall", true);
-        //RotX.decryptText(1, RotX.encryptText(1, "aBcDeF1hijklmnopqrstuvwxyz"));
-
     }
 
     public void Input(string input)

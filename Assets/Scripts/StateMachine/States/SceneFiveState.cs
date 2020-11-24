@@ -25,7 +25,6 @@ public class SceneFiveState : MonoBehaviour, IState
 
     public void RunState()
     {
-        //animator.SetBool("IsReadyToMoveWall", true);
 
     }
 
