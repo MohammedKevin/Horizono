@@ -15,6 +15,7 @@ public class PacketFactoryScript : MonoBehaviour
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
     public Text Timer;
+    private Animator _animator;
 
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
@@ -47,6 +48,8 @@ public class PacketFactoryScript : MonoBehaviour
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn1);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);*/
+
+        _animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,13 +67,19 @@ public class PacketFactoryScript : MonoBehaviour
                     GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
                     Invoke("Update", 5);
                     //Wait(3000);
-                    Task.Run(async () =>
+                    /*Task.Run(async () =>
                     {
                         await Task.Delay(5000);
+                        if (_animator != null)
+                            this._animator.SetBool("GameEndedBool", true);
                         GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
                         GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();
-                    });
+                    });*/
 
+                    this._animator.SetBool("GameEndedBool", true);
+                    //Task.Delay(4000).Wait();
+                    this._animator.SetBool("FadeOutBool", true);
+                    this.isFinished = true;
                 }
             }
 
@@ -78,6 +87,13 @@ public class PacketFactoryScript : MonoBehaviour
             {
                 StartCoroutine(WaitAndInstantiate());
             }
+        }
+
+        if (this.isFinished && this.GetComponentInParent<RectTransform>()?.position.z > 190)
+        {
+            this._animator.SetBool("ExitBool", true);
+            GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
+            GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();            
         }
     }
 
