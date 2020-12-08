@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class ColissionScript : MonoBehaviour
 {
-    private static string MESSAGE_A = "Message A";
+    public GameObject Message;
+    private static string MESSAGE_A = "Hallo wie gehts?";
     private static string MESSAGE_B = "Message B";
-    private static string MESSAGE_C = "Message C";
+    private static string MESSAGE_C = "Guten Morgen!";
     private static string MESSAGE_D = "Message D";
 
     private ButtonController _buttonController;
@@ -63,26 +64,9 @@ public class ColissionScript : MonoBehaviour
         if (_collided == true) // check, if someone is still on the button
         {
             var messageBox = GameObject.Find("PhoneMessage").GetComponent<Text>();
-            if (this.name == "UI_BTN_A")
-            {
-                _chosenMessage = MESSAGE_A;
-                messageBox.text = _chosenMessage;
-            }
-            else if (this.name == "UI_BTN_B")
-            {
-                _chosenMessage = MESSAGE_B;
-                messageBox.text = _chosenMessage;
-            }
-            else if (this.name == "UI_BTN_C")
-            {
-                _chosenMessage = MESSAGE_C;
-                messageBox.text = _chosenMessage;
-            }
-            else if (this.name == "UI_BTN_D")
-            {
-                _chosenMessage = MESSAGE_D;
-                messageBox.text = _chosenMessage;
-            }
+            _chosenMessage = Message.GetComponent<Text>().text;
+            messageBox.text = _chosenMessage;
+
             Debug.Log("Chosen Message: " + _chosenMessage);
             if (this._animator != null)
             {
