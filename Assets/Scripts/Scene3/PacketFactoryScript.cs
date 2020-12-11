@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 public class PacketFactoryScript : MonoBehaviour
 {
+    private float packagesAmount = 30.0f;
+
     private int _totalPacketCount = 0;
     private int _packetOnSpawnFloor = 0;
     private int _actualPoints = 0;
@@ -30,6 +32,11 @@ public class PacketFactoryScript : MonoBehaviour
     public GameObject Spawn2;
     public GameObject Spawn3;
 
+    #region slider
+    private Slider _slider;
+
+    public float _progessSpeed = 0.1f;
+    #endregion
     private List<GameObject> prefabs;
     private bool isFinished = false;
     private bool startGame = false;
@@ -49,7 +56,10 @@ public class PacketFactoryScript : MonoBehaviour
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);*/
 
+        _slider = GetComponent<Slider>();
+        _progessSpeed = (float)(1 / packagesAmount);
         _animator = GetComponentInParent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -58,7 +68,7 @@ public class PacketFactoryScript : MonoBehaviour
         if (startGame)
         {
             Timer.text = $"{_stopWatch.Elapsed.Minutes:d2}:{_stopWatch.Elapsed.Seconds:d2}:{_stopWatch.Elapsed.Milliseconds:d3}";
-            if (_actualPoints >= 30)
+            if (_actualPoints >= packagesAmount) //pls change
             {
                 if (_stopWatch.IsRunning)
                 {
@@ -195,6 +205,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     public void IncreasePoints()
     { 
-        _actualPoints++; 
+        _actualPoints++;
+        _slider.value += _progessSpeed;
     }
 }
