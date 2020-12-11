@@ -713,6 +713,7 @@ MonoBehaviour:
   Spawn1: {fileID: 0}
   Spawn2: {fileID: 0}
   Spawn3: {fileID: 0}
+  ProgressBar: {fileID: 0}
   _progessSpeed: 0.1
 --- !u!114 &431505878
 MonoBehaviour:
@@ -4983,7 +4984,7 @@ PrefabInstance:
     - target: {fileID: 1354855153072839061, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1354855153072839063, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
@@ -5513,7 +5514,7 @@ PrefabInstance:
     - target: {fileID: 2055330167175621581, guid: f098f80144e76554e8b6d601377b374f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2055330167175621578, guid: f098f80144e76554e8b6d601377b374f,
         type: 3}
@@ -6371,6 +6372,11 @@ PrefabInstance:
       propertyPath: Timer
       value: 
       objectReference: {fileID: 1282457764}
+    - target: {fileID: 7561317151000926865, guid: 9ab733aea48d5f64c801815b5010f584,
+        type: 3}
+      propertyPath: ProgressBar
+      value: 
+      objectReference: {fileID: 431505875}
     - target: {fileID: 7561317152373527444, guid: 9ab733aea48d5f64c801815b5010f584,
         type: 3}
       propertyPath: m_Color.a

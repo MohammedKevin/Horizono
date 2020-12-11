@@ -34,6 +34,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     #region slider
     private Slider _slider;
+    public GameObject ProgressBar;
 
     public float _progessSpeed = 0.1f;
     #endregion
@@ -56,8 +57,8 @@ public class PacketFactoryScript : MonoBehaviour
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);*/
 
-        _slider = GetComponent<Slider>();
         _progessSpeed = (float)(1 / packagesAmount);
+        _slider = ProgressBar.GetComponent<Slider>();
         _animator = GetComponentInParent<Animator>();
 
     }
