@@ -304,6 +304,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18696496}
   m_Mesh: {fileID: 4300000, guid: 0c9a3843454d2f442acd199953fec735, type: 3}
+--- !u!1 &19714030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19714031}
+  - component: {fileID: 19714032}
+  m_Layer: 0
+  m_Name: TuioReceiveHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19714031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19714030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 354467521}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &19714032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19714030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4315c083dd618479cda3ac5f06a684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jsonConfigFileName: DeepSpaceConfig\tuioConfig.json
+  _tuioSettings:
+    screenWidthPixel: 1920
+    screenHeightPixel: 1080
+    stageWidth: 1600
+    stageHeight: 900
+    udpPort: 3333
 --- !u!1 &68484680
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +702,7 @@ Transform:
   - {fileID: 7760801294204449921}
   - {fileID: 7760801295571240334}
   - {fileID: 7760801294878394029}
+  - {fileID: 19714031}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6608,7 +6659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3048f167cf20a13488cf7f951aa7b36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackingReceiveHandler: {fileID: 7760801295571240336}
+  _trackingReceiveHandler: {fileID: 19714032}
   trackSpawnParent: {fileID: 7760801294878394029}
   TrackingEntityPrefab: {fileID: 106092, guid: 39218ff6c4545ee4285aff91d47c4bea, type: 3}
   addUnknownTrackOnUpdate: 1
@@ -6744,7 +6795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8390915197550359406 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8390915197550359406, guid: e9ec609d519b1e24eafd430b475b90ea,
