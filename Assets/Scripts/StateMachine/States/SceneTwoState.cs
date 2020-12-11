@@ -70,7 +70,6 @@ public class SceneTwoState : MonoBehaviour, IState
         if (text.Length < 1)
         {
             gameObject.GetComponent<Animator>().SetTrigger("FinishedEnc");
-            gameObject.GetComponent<Animator>().SetBool("EncFinished", true);
             return;
         }
     }
