@@ -38,7 +38,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     public float _progessSpeed = 0.1f;
     #endregion
-    private List<GameObject> prefabs;
+    public List<GameObject> prefabs;
     private bool isFinished = false;
     private bool startGame = false;
 
