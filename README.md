@@ -39,7 +39,7 @@
   <h3 align="center">Horizono</h3>
 
   <p align="center">
-    project_description
+    Horizono is a simulation created in Unity that aims to change the stigma sourrounding programmers.
     <br />
     <a href="https://github.com/MohammedKevin/Horizono"><strong>Explore the docs »</strong></a>
     <br />
@@ -94,9 +94,7 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Unity]()
 
 
 
