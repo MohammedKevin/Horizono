@@ -7,10 +7,6 @@ using UnityEngine.UI;
 public class ColissionScript : MonoBehaviour
 {
     public GameObject Message;
-    private static string MESSAGE_A = "Hallo wie gehts?";
-    private static string MESSAGE_B = "Message B";
-    private static string MESSAGE_C = "Guten Morgen!";
-    private static string MESSAGE_D = "Message D";
 
     private ButtonController _buttonController;
     private Animator _animator;
