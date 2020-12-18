@@ -63,8 +63,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Mit Horizono möchten wir das Stigma der Programmierer endgültig ausradieren. Wir möchten der nächsten Generation zeigen, dass ein Programmierer nicht ein ungepflegter Mensch ist, der nur in der Dunkelheit vor seinem PC sitzt. Wir möchten mit dieser Simulation zeigen, was 3 normale Schüler einer Informatik HTL schaffen können.
 
 Horizono ist eine mit Unity erstellte Simulation, die veranschaulichen soll, wie eine Nachricht über einen Messenger im Detail versendet wird. Mit Horizono wird grafisch dargestellt, wie die Nachricht zuerst verschlüsselt und danach von A zu B gelangt.
@@ -75,7 +73,7 @@ Zuallererst muss ein Zuseher interaktiv ein Smartphone einschalten, welches dann
 
 ### Built With
 
-* [Unity]()
+* [Unity](https://unity.com)
 
 
 
@@ -97,10 +95,6 @@ This is an example of how to list things you need to use the software and how to
 1. Clone the repo
    ```sh
    git clone https://github.com/MohammedKevin/Horizono.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
    ```
 
 
