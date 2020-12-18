@@ -1,25 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** MohammedKevin, Horizono, twitter_handle, kevin.mohammed16@gmail.com, Horizono, project_description
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -87,9 +65,12 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`MohammedKevin`, `Horizono`, `twitter_handle`, `kevin.mohammed16@gmail.com`, `Horizono`, `project_description`
+Mit Horizono möchten wir das Stigma der Programmierer endgültig ausradieren. Wir möchten der nächsten Generation zeigen, dass ein Programmierer nicht ein ungepflegter Mensch ist, der nur in der Dunkelheit vor seinem PC sitzt. Wir möchten mit dieser Simulation zeigen, was 3 normale Schüler einer Informatik HTL schaffen können.
+
+Horizono ist eine mit Unity erstellte Simulation, die veranschaulichen soll, wie eine Nachricht über einen Messenger im Detail versendet wird. Mit Horizono wird grafisch dargestellt, wie die Nachricht zuerst verschlüsselt und danach von A zu B gelangt.
+
+Ablauf der Simulation:
+Zuallererst muss ein Zuseher interaktiv ein Smartphone einschalten, welches dann auf einer Leinwand im Deep Space projiziert wird. Daraufhin können die Zuseher zwischen mehreren Nachricht auswählen, welche Nachricht verschickt werden soll, und diese wird danach visuell verschlüsselt. Nachdem gezeigt wird, wie eine Nachricht verschlüsselt wird, können die Zuseher dank dem Lasertrackingsystem im Deep Space des Ars Electronica Centers aktiv mithelfen die Nachrichten zu versenden, indem sie auf ein Paket steigen und das Paket zum dazugehörigen Kommunikationskanal bewegen. Ob man auf ein Paket steht, wird über das Lasertrackingsystem geprüft. Zu guter Letzt wird die Nachricht wieder entschlüsselt und die Nachricht wird am Endgerät angezeigt.
 
 
 ### Built With
