@@ -184,15 +184,15 @@ Project Link: [https://github.com/MohammedKevin/Horizono](https://github.com/Moh
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/MohammedKevin/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/MohammedKevin/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/MohammedKevin/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/MohammedKevin/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/MohammedKevin/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/MohammedKevin/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MohammedKevin/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/MohammedKevin/repo/issues
-[license-shield]: https://img.shields.io/github/license/MohammedKevin/repo.svg?style=for-the-badge
-[license-url]: https://github.com/MohammedKevin/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/MohammedKevin/Horizono.svg?style=for-the-badge
+[contributors-url]: https://github.com/MohammedKevin/Horizono/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MohammedKevin/Horizono.svg?style=for-the-badge
+[forks-url]: https://github.com/MohammedKevin/Horizono/network/members
+[stars-shield]: https://img.shields.io/github/stars/MohammedKevin/Horizono.svg?style=for-the-badge
+[stars-url]: https://github.com/MohammedKevin/Horizono/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MohammedKevin/Horizono.svg?style=for-the-badge
+[issues-url]: https://github.com/MohammedKevin/Horizono/issues
+[license-shield]: https://img.shields.io/github/license/MohammedKevin/Horizono.svg?style=for-the-badge
+[license-url]: https://github.com/MohammedKevin/Horizono/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/MohammedKevin
