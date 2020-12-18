@@ -14,7 +14,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Horizono</h3>
+  <h2 align="center">Horizono</h2>
 
   <p align="center">
     Horizono is a simulation created in Unity that aims to change the stigma sourrounding programmers.
