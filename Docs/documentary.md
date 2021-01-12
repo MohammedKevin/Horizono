@@ -32,14 +32,14 @@ It is recommended that team members divide themselves into several aspects. This
 Clone our Github repository: https://github.com/MohammedKevin/Horizono.git
 
 ## Project Structure
-If you open the Scene "AECProject" under /Assets/Scenes you may find the project. It is structured in this way:
+If you open the Scene "AECProject" under /Assets/Scenes you may find the project. It is structured in this way:<br>
 ![](https://i.imgur.com/wP3NMO6.png)
 
 ### Explanation:
 * **Directional Light:** Can be ignored as it has no use.
 * **DeepSpaceSetup:** Includes the DevKit, which will be explained later on.
 * **EventSystem:** Was created by Unity, but is not used. It can be ignored
-* **TrackingObject:** Contains all Entities that are used for Pharus Tracking. (Scripts are from DevKit)
+* **TrackingObject:** Contains all Entities that are used for Pharus Tracking. (Scripts are from DevKit)<br>
     ![](https://i.imgur.com/7F4i0eY.png)
     * TrackLinkReceiveHandler: Handles incoming tracking data over TrackLink-Procotoll
     * TuioReceiveHandler: Handles incoming tracking data over TUIO-Procotoll
@@ -49,7 +49,7 @@ If you open the Scene "AECProject" under /Assets/Scenes you may find the project
         - TrackLink uses Unique IDs for every TrackEntity created. TUIO allocates the first available ID from 0 and above
         - In the DeepSpace there was the problem with TrackLink, that TrackLink-Protocoll did not use the right network cards to fetch the data from and send the data to the wall and floor simulations, so we had to manually deactivate unused network card and activate the right ones. With TUIO it should be done automatically. But as for now (11.01.21) we have not had the chance to test TUIO so we can prove this assumtion. (This part will be edited after the test was made on 19.01.21)
 * **SceneXState:** For each game scene we did not create a Unity scene, but a scene prefab that is activated through a **State Machine**.
-* **Env:** Environment as hills, floor grid, etc. (only change if you want to change the aesthetics). Under Env you can also find the **State Machine**.
+* **Env:** Environment as hills, floor grid, etc. (only change if you want to change the aesthetics). Under Env you can also find the **State Machine**.<br>
 
 
 ## Dev Kit
