@@ -72,7 +72,7 @@ https://immersify.eu/wp-content/uploads/2020/05/Guidelines-Deep-Space-Dev-Kit.pd
 
 The Project is controlled by a state machine [State Machine](https://de.wikipedia.org/wiki/Zustand_(Entwurfsmuster)). Every scene is a state. The state machine loads all scenes and then run them all in a defined order.
 
-State Machine Pattern example:
+State Machine Pattern example:<br>
 ![](https://i.imgur.com/Gzep3ml.png)
 
 The StateController gameobject in Env ist the parent object of a state machine. The StateController uses the StateController.cs class. The StateController class contains an instance of the StateMachine.cs class which is a implementation of the state machine pattern. The StateController class uses the StateMachine and orchestrates all the states.
