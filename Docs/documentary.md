@@ -33,14 +33,14 @@ Clone our Github repository: https://github.com/MohammedKevin/Horizono.git
 
 ## Project Structure
 If you open the Scene "AECProject" under /Assets/Scenes you may find the project. It is structured in this way:<br>
-![](https://i.imgur.com/wP3NMO6.png)
+![](pictures/structure.png)
 
 ### Explanation:
 * **Directional Light:** Can be ignored as it has no use.
 * **DeepSpaceSetup:** Includes the DevKit, which will be explained later on.
 * **EventSystem:** Was created by Unity, but is not used. It can be ignored
 * **TrackingObject:** Contains all Entities that are used for Pharus Tracking. (Scripts are from DevKit)<br>
-    ![](https://i.imgur.com/7F4i0eY.png)
+    ![](pictures/trackingobject.png)
     * TrackLinkReceiveHandler: Handles incoming tracking data over TrackLink-Procotoll
     * TuioReceiveHandler: Handles incoming tracking data over TUIO-Procotoll
     * TrackingEntityManager: Manages the incoming data over the ReceiveHandlers, creates TrackingEntity and saves it under TrackParent.
@@ -54,7 +54,7 @@ If you open the Scene "AECProject" under /Assets/Scenes you may find the project
 
 ## Dev Kit
 The DeepSpace Setup from the DevKit is structured as on this picture:
-![](https://i.imgur.com/w0nGPqw.png)
+![](pictures/devkit.png)
 
 ### Explanation
 * **CameraSetupSeperate:** Contains **WallCameraContainer** and **FloorCameraContainer**. Each container contains two cameras for each panel. Two cameras are used to create a so-called "Stereo-Effect". The camera positions and directions must not be changed unless you want to change camera positionings and resolution for a Holo-Lens-Project.
@@ -73,7 +73,7 @@ https://immersify.eu/wp-content/uploads/2020/05/Guidelines-Deep-Space-Dev-Kit.pd
 The Project is controlled by a state machine [State Machine](https://de.wikipedia.org/wiki/Zustand_(Entwurfsmuster)). Every scene is a state. The state machine loads all scenes and then run them all in a defined order.
 
 State Machine Pattern example:
-![](https://i.imgur.com/Gzep3ml.png)
+![](pictures/state.png)
 
 The StateController gameobject in Env ist the parent object of a state machine. The StateController uses the StateController.cs class. The StateController class contains an instance of the StateMachine.cs class which is a implementation of the state machine pattern. The StateController class uses the StateMachine and orchestrates all the states.
 
@@ -156,7 +156,7 @@ The simulation often only continues if there is a collision has been triggered. 
 As for now as we have not tested the TUIO-protocol yet, we still use the TrackLink-protocol. With the TrackLink-protocol you can simulate the Pharus Tracking-System with the **TrackLinkSimulator**.
 
 #### TrackLinkSimulator
-![](https://i.imgur.com/4Rlp5eQ.png)
+![](pictures/tracklink.png)
 
 With right-click on the simulator you can create a TrackingEntity with a unique ID. You can move the TrackingEntity per drag-and-drop and with right-click on a TrackingEntity you can delete it.
 
@@ -165,7 +165,7 @@ With right-click on the simulator you can create a TrackingEntity with a unique 
 #### TUIO Simulator
 The TUIO Simulator works a bit different than the TracklinkSimulator. You can create a TrackingEntity by clicking and holding the left mouse click on the white canvas.
 
-![](https://i.imgur.com/wj9WPIm.png)
+![](pictures/tuio.png)
 
 Notes:
 * **Important!!** By not moving the TrackingEntity for a couple seconds the TrackingEntity deletes itself!
