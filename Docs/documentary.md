@@ -53,7 +53,7 @@ If you open the Scene "AECProject" under /Assets/Scenes you may find the project
 
 
 ## Dev Kit
-The DeepSpace Setup from the DevKit is structured as on this picture:
+The DeepSpace Setup from the DevKit is structured as on this picture:<br>
 ![](https://i.imgur.com/w0nGPqw.png)
 
 ### Explanation
