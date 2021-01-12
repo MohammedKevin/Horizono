@@ -53,13 +53,8 @@ If you open the Scene "AECProject" under /Assets/Scenes you may find the project
 
 
 ## Dev Kit
-<<<<<<< HEAD
 The DeepSpace Setup from the DevKit is structured as on this picture:
 ![](pictures/devkit.png)
-=======
-The DeepSpace Setup from the DevKit is structured as on this picture:<br>
-![](https://i.imgur.com/w0nGPqw.png)
->>>>>>> 7d192b32fc4609c5afd1ecc841553249136fd2cf
 
 ### Explanation
 * **CameraSetupSeperate:** Contains **WallCameraContainer** and **FloorCameraContainer**. Each container contains two cameras for each panel. Two cameras are used to create a so-called "Stereo-Effect". The camera positions and directions must not be changed unless you want to change camera positionings and resolution for a Holo-Lens-Project.
@@ -77,13 +72,8 @@ https://immersify.eu/wp-content/uploads/2020/05/Guidelines-Deep-Space-Dev-Kit.pd
 
 The Project is controlled by a state machine [State Machine](https://de.wikipedia.org/wiki/Zustand_(Entwurfsmuster)). Every scene is a state. The state machine loads all scenes and then run them all in a defined order.
 
-<<<<<<< HEAD
 State Machine Pattern example:
 ![](pictures/state.png)
-=======
-State Machine Pattern example:<br>
-![](https://i.imgur.com/Gzep3ml.png)
->>>>>>> 7d192b32fc4609c5afd1ecc841553249136fd2cf
 
 The StateController gameobject in Env ist the parent object of a state machine. The StateController uses the StateController.cs class. The StateController class contains an instance of the StateMachine.cs class which is a implementation of the state machine pattern. The StateController class uses the StateMachine and orchestrates all the states.
 
