@@ -99,13 +99,6 @@ public class PacketFactoryScript : MonoBehaviour
                 StartCoroutine(WaitAndInstantiate());
             }
         }
-
-        if (this.isFinished && this.GetComponentInParent<RectTransform>()?.position.z > 190)
-        {
-            this._animator.SetBool("ExitBool", true);
-            GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
-            GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();            
-        }
     }
 
     /*private IEnumerator Wait(int v)

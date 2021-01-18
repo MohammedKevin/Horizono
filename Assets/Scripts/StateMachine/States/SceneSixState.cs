@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SceneTwoState : MonoBehaviour, IState
+public class SceneSixState : MonoBehaviour, IState
 {
     GameObject ownerObject;
-    public GameObject data;
     private Animator animator;
+    public GameObject data;
 
     private void Start()
     {
@@ -17,7 +17,6 @@ public class SceneTwoState : MonoBehaviour, IState
 
     public void ExitState()
     {
-        data.GetComponent<Data>().Message = this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
         ownerObject.SetActive(false);
     }
 
@@ -29,7 +28,6 @@ public class SceneTwoState : MonoBehaviour, IState
 
     public void RunState()
     {
-        
     }
 
     public void Input(string input)
