@@ -51,7 +51,7 @@ public class HighScoreTable : MonoBehaviour
 
         string[] cur = content.Split(',');
         highScoreEntryTransformList = new List<Transform>();
-        highScoreEntries.Sort((first, second) => second.Score.CompareTo(first.Score));
+        highScoreEntries.Sort((first, second) => first.Score.CompareTo(second.Score));
 
 
         HighScoreEntry hSE = highScoreEntries.Where(x => x.Score < Convert.ToInt32(content.Split(',')[1])).LastOrDefault();

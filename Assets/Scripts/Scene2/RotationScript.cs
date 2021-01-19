@@ -5,14 +5,15 @@ using UnityEngine;
 public class RotationScript : MonoBehaviour
 {
     private double rotateStepSize = 13.84615;
-    public char input = 'd';
+    public char input;
     private double current = 0;
     public bool readyToTurn = false;
+    public GameObject data;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        input = data.GetComponent<Data>().encLetter;
     }
 
     // Update is called once per frame
@@ -28,11 +29,16 @@ public class RotationScript : MonoBehaviour
     {
         if (!readyToTurn)
             return;
+        if(input == null)
+        {
+            return;
+        }
         double goal = (letter - 'a') * rotateStepSize;
         if (current > goal -0.1 && current < goal + 0.1)
         {
             //needs to be thrown after 5 secs from colision
             gameObject.GetComponentInParent<Animator>().SetTrigger("StartMoveLetter");
+            data.GetComponent<Data>().encLetter = input;
             return;
         }
         this.transform.eulerAngles = new Vector3

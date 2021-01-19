@@ -7,6 +7,7 @@ using System.Diagnostics;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using System.Threading.Tasks;
+using System.IO;
 
 public class PacketFactoryScript : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PacketFactoryScript : MonoBehaviour
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
     private readonly object counterLock = new object();
+    
+    string path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
 
     // Packet Prefabs
     public GameObject BluePacketPrefab;
@@ -76,6 +79,8 @@ public class PacketFactoryScript : MonoBehaviour
                     _stopWatch.Stop();
                     TimeSpan ts = _stopWatch.Elapsed;
                     GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                    string content = $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm")},{ts.TotalSeconds}";
+                    File.WriteAllText(path, content);
                     Invoke("Update", 5);
                     //Wait(3000);
                     /*Task.Run(async () =>
@@ -98,13 +103,6 @@ public class PacketFactoryScript : MonoBehaviour
             {
                 StartCoroutine(WaitAndInstantiate());
             }
-        }
-
-        if (this.isFinished && this.GetComponentInParent<RectTransform>()?.position.z > 190)
-        {
-            this._animator.SetBool("ExitBool", true);
-            GameObject.Find("SceneThreeState").GetComponent<SceneThreeState>().ExitState();
-            GameObject.Find("EndSceneScript").GetComponent<EndSceneScript>().EndSceneEvent();            
         }
     }
 

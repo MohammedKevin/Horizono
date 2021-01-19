@@ -7,14 +7,17 @@ public class SceneTwoState : MonoBehaviour, IState
 {
     GameObject ownerObject;
     public GameObject data;
+    private Animator animator;
 
     private void Start()
     {
         this.ownerObject = this.gameObject;
+        animator = GetComponent<Animator>();
     }
 
     public void ExitState()
     {
+        data.GetComponent<Data>().Message = this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
         ownerObject.SetActive(false);
     }
 
@@ -57,20 +60,23 @@ public class SceneTwoState : MonoBehaviour, IState
     {
         string text = this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text;
         if (text.Length < 1) return;
+
         this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text = text[text.Length - 1].ToString();
+
+        string letter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        animator.SetInteger("LetterParameter", letter.ToUpper()[0] - 'A');
+
         this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text = text.Remove(text.Length - 1);
     }
     public void addLetter()
     {
-        Debug.Log("AddLetter()");
-        this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text + this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
-        
+        string letter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text = letter + this.gameObject.transform.Find("Text").Find("TextEnc").gameObject.GetComponent<Text>().text;
         //Check if Enc is done
         string text = this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text;
         if (text.Length < 1)
         {
             gameObject.GetComponent<Animator>().SetTrigger("FinishedEnc");
-            gameObject.GetComponent<Animator>().SetBool("EncFinished", true);
             return;
         }
     }
