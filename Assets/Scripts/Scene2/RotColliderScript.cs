@@ -33,4 +33,9 @@ public class RotColliderScript : MonoBehaviour
                 //this.gameObject.transform.parent.parent.parent.GetComponent<Animator>().SetTrigger("StartMoveLetter");
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        _collided = false;
+    }
 }
