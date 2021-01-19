@@ -245,7 +245,7 @@ namespace DeepSpace.LaserTracking
 		}
 
 		private void SaveTrackToDict(TrackRecord track, bool createIfNotYetExisting)
-		{
+ 		{
 			if(_trackDict.ContainsKey(track.trackID))
 			{
 				_trackDict[track.trackID] = track;

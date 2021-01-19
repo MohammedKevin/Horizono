@@ -5035,7 +5035,7 @@ PrefabInstance:
     - target: {fileID: 1354855153072839061, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1354855153072839063, guid: 6b4d5afe175980149884f972e1e02c7f,
         type: 3}
@@ -5565,7 +5565,7 @@ PrefabInstance:
     - target: {fileID: 2055330167175621581, guid: f098f80144e76554e8b6d601377b374f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2055330167175621578, guid: f098f80144e76554e8b6d601377b374f,
         type: 3}
@@ -7051,12 +7051,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760801294204449922}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3048f167cf20a13488cf7f951aa7b36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackingReceiveHandler: {fileID: 7760801295571240336}
+  _trackingReceiveHandler: {fileID: 19714032}
   trackSpawnParent: {fileID: 7760801294878394029}
   TrackingEntityPrefab: {fileID: 106092, guid: 39218ff6c4545ee4285aff91d47c4bea, type: 3}
   addUnknownTrackOnUpdate: 1
@@ -7100,12 +7100,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760801294204449922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 903d0818e6fa20e4b8ad2aa9c06073a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackingReceiveHandler: {fileID: 7760801295571240336}
+  _trackingReceiveHandler: {fileID: 19714032}
   trackSpawnParent: {fileID: 7760801294878394029}
   TrackingEntityPrefab: {fileID: 106092, guid: 39218ff6c4545ee4285aff91d47c4bea, type: 3}
   addUnknownTrackOnUpdate: 1
