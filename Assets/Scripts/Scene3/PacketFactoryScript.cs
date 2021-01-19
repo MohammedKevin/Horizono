@@ -207,4 +207,9 @@ public class PacketFactoryScript : MonoBehaviour
         _actualPoints++;
         _slider.value += _progessSpeed;
     }
+
+    public void WinGame()
+    {
+        _actualPoints = 40;
+    }
 }
