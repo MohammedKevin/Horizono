@@ -15,7 +15,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     private int _totalPacketCount = 0;
     private int _packetOnSpawnFloor = 0;
-    private int _actualPoints = 0;
+    private int _actualPoints = 28;
     private Stopwatch _stopWatch;
     public Text Timer;
     private Animator _animator;
@@ -23,8 +23,8 @@ public class PacketFactoryScript : MonoBehaviour
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
     private readonly object counterLock = new object();
-    
-    string path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
+
+    string path;
 
     // Packet Prefabs
     public GameObject BluePacketPrefab;
@@ -63,7 +63,7 @@ public class PacketFactoryScript : MonoBehaviour
         _progessSpeed = (float)(1 / packagesAmount);
         _slider = ProgressBar.GetComponent<Slider>();
         _animator = GetComponentInParent<Animator>();
-
+        path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
     }
 
     // Update is called once per frame
@@ -71,14 +71,14 @@ public class PacketFactoryScript : MonoBehaviour
     {
         if (startGame)
         {
-            Timer.text = $"{_stopWatch.Elapsed.Minutes:d2}:{_stopWatch.Elapsed.Seconds:d2}:{_stopWatch.Elapsed.Milliseconds:d3}";
+            Timer.text = $"{_stopWatch.Elapsed.Minutes:d2}:{_stopWatch.Elapsed.Seconds:d2}";
             if (_actualPoints >= packagesAmount) //pls change
             {
                 if (_stopWatch.IsRunning)
                 {
                     _stopWatch.Stop();
                     TimeSpan ts = _stopWatch.Elapsed;
-                    GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec:{3}ms", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                    GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec", ts.Hours, ts.Minutes, ts.Seconds);
                     string content = $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm")},{ts.TotalSeconds}";
                     File.WriteAllText(path, content);
                     Invoke("Update", 5);
