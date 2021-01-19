@@ -5,7 +5,7 @@ using UnityEngine;
 public class Data : MonoBehaviour
 {
     public string Message;
-    public string encLetter;
+    public char encLetter;
     // Start is called before the first frame update
     void Start()
     {
