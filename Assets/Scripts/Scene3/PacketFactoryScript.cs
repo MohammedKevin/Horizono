@@ -23,8 +23,8 @@ public class PacketFactoryScript : MonoBehaviour
     private readonly object packetsLock = new object();
     private readonly object listLock = new object();
     private readonly object counterLock = new object();
-    
-    string path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
+
+    string path;
 
     // Packet Prefabs
     public GameObject BluePacketPrefab;
@@ -59,7 +59,7 @@ public class PacketFactoryScript : MonoBehaviour
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn1);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn2);
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);*/
-
+        path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
         _progessSpeed = (float)(1 / packagesAmount);
         _slider = ProgressBar.GetComponent<Slider>();
         _animator = GetComponentInParent<Animator>();

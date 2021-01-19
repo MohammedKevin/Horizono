@@ -22,7 +22,7 @@ public class HighScoreTable : MonoBehaviour
         string content = "";
 
         if (!File.Exists(path)){
-            content = "Anil,0";
+            content = $"{DateTime.Now.ToString("dd/MM/yyyy HH:MM")};9999";
             File.WriteAllText(path, content);
         }else
             content = File.ReadAllText(path);
@@ -36,7 +36,7 @@ public class HighScoreTable : MonoBehaviour
         highScoreEntries = new List<HighScoreEntry>();
         for (int i = 1; i < data.Length; i++)
         {
-            string[] row = data[i].Split(','); //get col
+            string[] row = data[i].Split(';'); //get col
 
             HighScoreEntry h = new HighScoreEntry();
 
@@ -49,12 +49,12 @@ public class HighScoreTable : MonoBehaviour
             highScoreEntries.Add(h);
         }
 
-        string[] cur = content.Split(',');
+        string[] cur = content.Split(';');
         highScoreEntryTransformList = new List<Transform>();
         highScoreEntries.Sort((first, second) => first.Score.CompareTo(second.Score));
 
 
-        HighScoreEntry hSE = highScoreEntries.Where(x => x.Score < Convert.ToInt32(content.Split(',')[1])).LastOrDefault();
+        HighScoreEntry hSE = highScoreEntries.Where(x => x.Score < Convert.ToInt32(content.Split(';')[1])).LastOrDefault();
 
         if (hSE != null)
         {
@@ -74,11 +74,11 @@ public class HighScoreTable : MonoBehaviour
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString("highscoreTable"));*/
-        string output = "Name,Score";
+        string output = "Name;Score";
 
         for (int i = 0; i < highScoreEntries.Count; i++)
         {
-            output += "\n" + highScoreEntries.ElementAt(i).Name + "," + highScoreEntries.ElementAt(i).Score;
+            output += "\n" + highScoreEntries.ElementAt(i).Name + ";" + highScoreEntries.ElementAt(i).Score;
         }
         File.WriteAllText(Application.dataPath + "/Resources/scores.csv", output);
     }
