@@ -15,7 +15,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     private int _totalPacketCount = 0;
     private int _packetOnSpawnFloor = 0;
-    private int _actualPoints = 28;
+    private int _actualPoints = 0;
     private Stopwatch _stopWatch;
     public Text Timer;
     private Animator _animator;
@@ -79,7 +79,7 @@ public class PacketFactoryScript : MonoBehaviour
                     _stopWatch.Stop();
                     TimeSpan ts = _stopWatch.Elapsed;
                     GameObject.Find("WatchTime").GetComponent<Text>().text = String.Format("needed time: {0}h:{1}min:{2}sec", ts.Hours, ts.Minutes, ts.Seconds);
-                    string content = $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm")},{ts.TotalSeconds}";
+                    string content = $"{DateTime.Now.ToString("dd/MM/yyyy HH:mm")};{ts.TotalSeconds}";
                     File.WriteAllText(path, content);
                     Invoke("Update", 5);
                     //Wait(3000);
