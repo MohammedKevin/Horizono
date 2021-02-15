@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +13,7 @@ public class RotationDecScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int rot = data.GetComponent<Data>().encLetter - 'a';
-        input = RotX.decryptText(rot, "a")[0];
+        input = Convert.ToChar('a' + (26 - (data.GetComponent<Data>().encLetter - 'a')));
     }
 
     // Update is called once per frame
