@@ -12,13 +12,13 @@ public class RotationDecScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        input = data.GetComponent<Data>().encLetter;
+        int rot = data.GetComponent<Data>().encLetter - 'a';
+        input = RotX.decryptText(rot, "a")[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        input = data.GetComponent<Data>().encLetter;
         Rotate(input);
         Rotate(input);
         Rotate(input);
