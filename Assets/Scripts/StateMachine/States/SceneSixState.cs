@@ -37,18 +37,18 @@ public class SceneSixState : MonoBehaviour, IState
 
     public void colorInLetter()
     {
-        Debug.Log("colorInLetter()/in scene 2");
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        if (!(currentLetter.ToLower()[0] - 'a' >= 'a' - 'a' && currentLetter.ToLower()[0] - 'a' <= 'z' - 'a')) return;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
         this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter.ToUpper()).gameObject.GetComponent<Text>().color = Color.green;
         this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc.ToUpper()).gameObject.GetComponent<Text>().color = Color.green;
     }
     public void colorOutLetter()
     {
-        Debug.Log("colorOutLetter()/in scene 2");
         int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
+        if (!(currentLetter.ToLower()[0] - 'a' >= 'a' - 'a' && currentLetter.ToLower()[0] - 'a' <= 'z' - 'a')) return;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
         this.gameObject.transform.Find("BigLetterWheel").Find("Letters").Find(currentLetter.ToUpper()).gameObject.GetComponent<Text>().color = Color.white;
         this.gameObject.transform.Find("SmallLetterWheel").Find("Letters").Find(currentLetterEnc.ToUpper()).gameObject.GetComponent<Text>().color = Color.white;

@@ -14,7 +14,15 @@ public class PacketFactoryScript : MonoBehaviour
     private float packagesAmount = 30.0f;
 
     private int _totalPacketCount = 0;
-    private int _packetOnSpawnFloor = 0;
+    public int _packetOnSpawnFloor = 0;
+
+    public int PacketOnSpawnFloor
+    {
+        get { return _packetOnSpawnFloor; }
+        set { _packetOnSpawnFloor = value; }
+    }
+
+
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
     public Text Timer;
@@ -41,7 +49,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     public float _progessSpeed = 0.1f;
     #endregion
-    private List<GameObject> prefabs;
+    public List<GameObject> prefabs;
     private bool isFinished = false;
     private bool startGame = false;
 
