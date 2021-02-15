@@ -1588,7 +1588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7567aacf723e9ac458fb175d33ce601b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _packetOnSpawnFloor: 0
   Timer: {fileID: 0}
   BluePacketPrefab: {fileID: 0}
   GreenPacketPrefab: {fileID: 0}
@@ -1742,6 +1741,7 @@ GameObject:
   - component: {fileID: 444794470}
   - component: {fileID: 444794472}
   - component: {fileID: 444794471}
+  - component: {fileID: 444794473}
   m_Layer: 0
   m_Name: blackhole
   m_TagString: Untagged
@@ -1775,9 +1775,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ff3d202b0fc4d4e96e5f1f59bf7f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BluePacketPrefab: {fileID: 0}
-  GreenPacketPrefab: {fileID: 0}
-  RedPacketPrefab: {fileID: 0}
+  BluePacketPrefab: {fileID: 870756919998932092, guid: 236dc39773c88fe42ae870c149ee27b0,
+    type: 3}
+  GreenPacketPrefab: {fileID: 1374896136024658608, guid: a8b8d21f009842d48ab9dbc2477b3dbb,
+    type: 3}
+  RedPacketPrefab: {fileID: 6123408452583981769, guid: 006ceea9ea19254478fb35802f76ae2d,
+    type: 3}
 --- !u!212 &444794472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1826,6 +1829,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &444794473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444794469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2.5, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0.00000023841858}
 --- !u!1 &465912302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,7 +6152,7 @@ PrefabInstance:
     - target: {fileID: 8475755058378626430, guid: 00c8a2e2d601e7a41817fd5191073a92,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3865395792667390778, guid: 00c8a2e2d601e7a41817fd5191073a92,
         type: 3}

@@ -14,7 +14,7 @@ public class PacketFactoryScript : MonoBehaviour
     private float packagesAmount = 30.0f;
 
     private int _totalPacketCount = 0;
-    public int _packetOnSpawnFloor = 0;
+    private int _packetOnSpawnFloor = 0;
 
     public int PacketOnSpawnFloor
     {
