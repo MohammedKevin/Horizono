@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SceneSixState : MonoBehaviour, IState
 {
@@ -37,7 +38,7 @@ public class SceneSixState : MonoBehaviour, IState
 
     public void colorInLetter()
     {
-        int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
+        int rot = data.GetComponent<Data>().encLetter - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         if (!(currentLetter.ToLower()[0] - 'a' >= 'a' - 'a' && currentLetter.ToLower()[0] - 'a' <= 'z' - 'a')) return;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);
@@ -46,7 +47,7 @@ public class SceneSixState : MonoBehaviour, IState
     }
     public void colorOutLetter()
     {
-        int rot = this.gameObject.transform.Find("SmallLetterWheel").GetComponent<RotationScript>().input - 'a';
+        int rot = data.GetComponent<Data>().encLetter - 'a';
         string currentLetter = this.gameObject.transform.Find("Text").Find("Letter").gameObject.GetComponent<Text>().text;
         if (!(currentLetter.ToLower()[0] - 'a' >= 'a' - 'a' && currentLetter.ToLower()[0] - 'a' <= 'z' - 'a')) return;
         string currentLetterEnc = RotX.encryptText(rot, currentLetter);

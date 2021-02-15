@@ -3105,7 +3105,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ich Liebe dich
+  m_Text: Ich liebe dich
 --- !u!222 &731361433
 CanvasRenderer:
   m_ObjectHideFlags: 0
