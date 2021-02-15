@@ -13,7 +13,7 @@ public class RotationDecScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        input = Convert.ToChar('a' + (26 - (data.GetComponent<Data>().encLetter) - 'a'));
+        input = Convert.ToChar('a' + (26 - (data.GetComponent<Data>().encLetter - 'a')));
     }
 
     // Update is called once per frame
