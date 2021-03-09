@@ -10,6 +10,7 @@ public class SceneSixState : MonoBehaviour, IState
     private Animator animator;
     public GameObject data;
 
+
     private void Start()
     {
         this.ownerObject = this.gameObject;
@@ -25,6 +26,7 @@ public class SceneSixState : MonoBehaviour, IState
     {
         ownerObject.SetActive(true);
         this.gameObject.transform.Find("Text").Find("TextDec").gameObject.GetComponent<Text>().text = data.GetComponent<Data>().Message;
+        this.gameObject.transform.Find("SmallLetterWheel").gameObject.GetComponent<RotationDecScript>().calcDecLetter();
     }
 
     public void RunState()

@@ -6,28 +6,37 @@ using UnityEngine;
 public class RotationDecScript : MonoBehaviour
 {
     private double rotateStepSize = 13.84615;
-    public char input;
+    char rotChar;
     private double current = 0;
     public GameObject data;
 
     // Start is called before the first frame update
     void Start()
     {
-        input = Convert.ToChar('a' + (26 - (data.GetComponent<Data>().encLetter - 'a')));
+    }
+
+    public void calcDecLetter()
+    {
+        char encLetter = data.GetComponent<Data>().encLetter;
+        int dif = encLetter - 'a';
+        int decNumber = 26 - dif;
+        char decChar = Convert.ToChar('a' + decNumber);
+        rotChar = decChar;
+        data.GetComponent<Data>().encLetter = decChar;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Rotate(input);
-        Rotate(input);
-        Rotate(input);
-        Rotate(input);
-        Rotate(input);
+        Rotate(rotChar);
+        Rotate(rotChar);
+        Rotate(rotChar);
+        Rotate(rotChar);
+        Rotate(rotChar);
     }
     void Rotate(char letter)
     {
-        if (input == null)
+        if (rotChar == null)
         {
             return;
         }
@@ -36,7 +45,7 @@ public class RotationDecScript : MonoBehaviour
         {
             //needs to be thrown after 5 secs from colision
             gameObject.GetComponentInParent<Animator>().SetTrigger("StartMoveLetter");
-            data.GetComponent<Data>().encLetter = input;
+            data.GetComponent<Data>().encLetter = rotChar;
             return;
         }
         this.transform.eulerAngles = new Vector3
