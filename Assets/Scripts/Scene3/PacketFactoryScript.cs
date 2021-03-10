@@ -63,6 +63,7 @@ public class PacketFactoryScript : MonoBehaviour
         _progessSpeed = (float)(1 / packagesAmount);
         _slider = ProgressBar.GetComponent<Slider>();
         _animator = GetComponentInParent<Animator>();
+        _animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
         path = Application.dataPath + "/Resources/current.csv"; //Currentscorefile
     }
 

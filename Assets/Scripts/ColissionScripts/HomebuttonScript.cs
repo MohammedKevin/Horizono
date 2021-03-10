@@ -9,6 +9,7 @@ public class HomebuttonScript : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInParent<Animator>();
+        _animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
     }
 
     // Update is called once per frame

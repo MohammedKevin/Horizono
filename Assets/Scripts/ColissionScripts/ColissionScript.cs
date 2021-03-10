@@ -17,6 +17,7 @@ public class ColissionScript : MonoBehaviour
     {
         _buttonController = GameObject.Find("ButtonController").GetComponent<ButtonController>();
         _animator = GetComponentInParent<Animator>();
+        _animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
     }
 
     // Update is called once per frame
