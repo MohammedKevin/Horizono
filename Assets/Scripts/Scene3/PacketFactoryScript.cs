@@ -15,6 +15,13 @@ public class PacketFactoryScript : MonoBehaviour
 
     private int _totalPacketCount = 0;
     private int _packetOnSpawnFloor = 0;
+
+    public int PacketOnSpawnFloor
+    {
+        get { return _packetOnSpawnFloor; }
+        set { _packetOnSpawnFloor = value; }
+    }
+
     private int _actualPoints = 0;
     private Stopwatch _stopWatch;
     public Text Timer;
@@ -41,7 +48,7 @@ public class PacketFactoryScript : MonoBehaviour
 
     public float _progessSpeed = 0.1f;
     #endregion
-    private List<GameObject> prefabs;
+    public List<GameObject> prefabs;
     private bool isFinished = false;
     private bool startGame = false;
 
@@ -151,9 +158,9 @@ public class PacketFactoryScript : MonoBehaviour
         InstantiatePacket(GetFirstOfListAndRemoveIt(), Spawn3);
     }
 
-    private IEnumerator WaitAndInstantiate()
+    public IEnumerator WaitAndInstantiate()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         if (_packetOnSpawnFloor < 3)
         {
             lock (packetsLock)
@@ -174,25 +181,25 @@ public class PacketFactoryScript : MonoBehaviour
         }
     }
 
-    private void InstantiatePacket(GameObject prefab, GameObject parent)
+    public void InstantiatePacket(GameObject prefab, GameObject parent)
     {
         if (prefab == null) return;
         if (_packetOnSpawnFloor < 3)
         {
             lock (counterLock)
             {
-                if ( _packetOnSpawnFloor < 3)
+                if (_packetOnSpawnFloor < 3)
                 {
                     GameObject packet = GameObject.Instantiate(prefab, new Vector3(), Quaternion.identity);
                     packet.transform.SetParent(parent.transform, false);
                     this._totalPacketCount++;
                     Debug.Log("Total amount of packets: " + _totalPacketCount);
                 }
-            }            
+            }
         }
     }
 
-    private GameObject GetFirstOfListAndRemoveIt()
+    public GameObject GetFirstOfListAndRemoveIt()
     {
         if (prefabs.Count == 0) return null;
         lock (listLock)
@@ -204,7 +211,7 @@ public class PacketFactoryScript : MonoBehaviour
     }
 
     public void IncreasePoints()
-    { 
+    {
         _actualPoints++;
         _slider.value += _progessSpeed;
     }
