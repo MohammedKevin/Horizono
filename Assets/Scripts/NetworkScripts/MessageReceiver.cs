@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MessageReceiver : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class MessageReceiver : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Received Messages should look like this: 
+    /// -ObjectName-;-TriggerName-;[-Message-]
+    /// </summary>
+    /// <param name="messageBytes"></param>
+    /// <param name="senderIP"></param>
     public void ReceiveMessage(byte[] messageBytes, IPAddress senderIP)
     {
         string message = Encoding.Default.GetString(messageBytes);
@@ -34,6 +41,14 @@ public class MessageReceiver : MonoBehaviour
         {
             if (_animator != null)
                 _animator.SetTrigger(splittedMessage[1]);
+        }
+        else if (splittedMessage[0] == "MessageButton")
+        {
+            if (_animator != null)
+            {
+                _animator.SetTrigger(splittedMessage[1]);
+                GameObject.Find("PhoneMessage").GetComponent<Text>().text = splittedMessage[2];
+            }
         }
 
     }

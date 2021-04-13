@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ColissionScript : MonoBehaviour
 {
     public GameObject Message;
+    public MessageSender messageSender;
 
     private ButtonController _buttonController;
     private Animator _animator;
@@ -68,6 +69,7 @@ public class ColissionScript : MonoBehaviour
             if (this._animator != null)
             {
                 this._animator.SetTrigger("ChooseMessageTrigger");
+                messageSender.SendMessage($"MessageButton;ChooseMessageTrigger;{_chosenMessage}");
                 var textDec = GameObject.Find("TextDec");
                 Debug.Log("test");
                 if (textDec != null && textDec is Text)

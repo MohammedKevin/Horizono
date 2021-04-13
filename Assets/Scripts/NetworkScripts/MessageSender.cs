@@ -26,7 +26,7 @@ public class MessageSender : MonoBehaviour
 
     public new void SendMessage(string message)
     {
-        if (appType == CmdConfigManager.AppType.FLOOR)
+        if (appType == CmdConfigManager.AppType.WALL)
             SenderToFloor.AddMessage(message);
         else
             SenderToWall.AddMessage(message);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HomebuttonScript : MonoBehaviour
 {
+    public MessageSender messageSender;
+
     private Animator _animator;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class HomebuttonScript : MonoBehaviour
         if (this._animator != null)
         {
             this._animator.SetTrigger("ColissionWithHomebuttonTrigger");
+            messageSender.SendMessage("Homebutton;ColissionWithHomebuttonTrigger");
         }
         else
             Debug.Log("Collided with homebutton but animator not found!");
