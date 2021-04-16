@@ -10,10 +10,13 @@ public class RotationScript : MonoBehaviour
     public bool readyToTurn = false;
     public GameObject data;
 
+    private MessageSender _messageSender;
+
     // Start is called before the first frame update
     void Start()
     {
         input = data.GetComponent<Data>().encLetter;
+        _messageSender = GameObject.Find("MessageSender").GetComponent<MessageSender>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class RotationScript : MonoBehaviour
         {
             //needs to be thrown after 5 secs from colision
             gameObject.GetComponentInParent<Animator>().SetTrigger("StartMoveLetter");
+            _messageSender.SendMessage("EncWheel;StartMoveLetter");
             data.GetComponent<Data>().encLetter = input;
             return;
         }

@@ -37,6 +37,9 @@ public class MessageReceiver : MonoBehaviour
 
         var splittedMessage = message.Split(';');
 
+        if (splittedMessage.Length < 1)
+            return;
+
         if (splittedMessage[0] == "Homebutton")
         {
             if (_animator != null)
@@ -49,6 +52,30 @@ public class MessageReceiver : MonoBehaviour
                 _animator.SetTrigger(splittedMessage[1]);
                 GameObject.Find("PhoneMessage").GetComponent<Text>().text = splittedMessage[2];
             }
+        }
+        else if (splittedMessage[0] == "EncWheel")
+        {
+            if (_animator != null)
+            {
+                if (splittedMessage[1].Length == 1)
+                {
+                    GameObject.Find("SmallLetterWheel").GetComponent<RotationScript>().input = splittedMessage[1][0]; // its is only one char, but as you cannot allocate string to char you have to access the first letter.
+                    GameObject.Find("SmallLetterWheel").GetComponent<RotationScript>().readyToTurn = true;
+                }
+                else
+                {
+                    _animator.SetTrigger(splittedMessage[1]);
+                }
+            }
+        }
+        else if (splittedMessage[0] == "Startbutton")
+        {
+            CountdownController countdown = GameObject.Find("CountdownCanvas").GetComponent<CountdownController>();
+            countdown.StartCountDown();
+        }
+        else if (splittedMessage[0] == "Game" && splittedMessage[1] == "IncreasePoints")
+        {
+            GameObject.Find("PacketFloor").GetComponent<PacketFactoryScript>().IncreasePoints();
         }
 
     }

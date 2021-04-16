@@ -8,6 +8,7 @@ public class CountdownController : MonoBehaviour
     public int countdownTime;
     public Text countdownDisplay;
 
+    private bool _hasStarted = false;
     private Animator _animator;
 
     // Start is called before the first frame update
@@ -18,11 +19,13 @@ public class CountdownController : MonoBehaviour
 
     public void StartCountDown()
     {
-        StartCoroutine(CountdownStart());
+        if (!_hasStarted)
+            StartCoroutine(CountdownStart());
     }
 
     private IEnumerator CountdownStart()
     {
+        _hasStarted = true;
         while (countdownTime > 0)
         {
             countdownDisplay.text = countdownTime.ToString();

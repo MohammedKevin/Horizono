@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class StartBtnScript : MonoBehaviour
 {
+    private MessageSender _messageSender;
+
     private bool _collided;
     private bool _gameStarted;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _messageSender = GameObject.Find("MessageSender").GetComponent<MessageSender>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class StartBtnScript : MonoBehaviour
             {
                 CountdownController countdown = GameObject.Find("CountdownCanvas").GetComponent<CountdownController>();
                 countdown.StartCountDown();
+                _messageSender.SendMessage("StartButton;StartCountdown");
                 _gameStarted = true;
                 this.gameObject.SetActive(false);
                 //this.GetComponent<Renderer>().SetActive

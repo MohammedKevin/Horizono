@@ -6,11 +6,12 @@ public class RotColliderScript : MonoBehaviour
 {
     private Animator _animator;
     private bool _collided = false;
+    private MessageSender _messageSender;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _messageSender = GameObject.Find("MessageSender").GetComponent<MessageSender>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class RotColliderScript : MonoBehaviour
         {
                 this.gameObject.transform.parent.parent.parent.Find("SmallLetterWheel").GetComponent<RotationScript>().input = this.name.ToLower()[0];
                 this.gameObject.transform.parent.parent.parent.Find("SmallLetterWheel").GetComponent<RotationScript>().readyToTurn = true;
+            _messageSender.SendMessage($"EncWheel;{this.name.ToLower()[0]}");
                 //this.gameObject.transform.parent.parent.parent.GetComponent<Animator>().SetTrigger("StartMoveLetter");
         }
     }
