@@ -19,7 +19,7 @@
   <p align="center">
     Horizono is a simulation created in Unity that aims to change the stigma sourrounding programmers.
     <br />
-    <a href="https://github.com/MohammedKevin/Horizono/blob/master/Management/documentary.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/MohammedKevin/Horizono/blob/master/Management/documentation.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/MohammedKevin/Horizono">View Demo</a>
