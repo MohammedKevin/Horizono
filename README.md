@@ -119,8 +119,8 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-lukas.bochis@gmail.com <br>
-kevin.mohammed16@gmail.com
+<a href="lukas.bochis@gmail.com">Lukas Bochis</a> <br>
+<a href="kevin.mohammed16@gmail.com">Kevin Mohammed</a>
 
 Project Link: [https://github.com/MohammedKevin/Horizono](https://github.com/MohammedKevin/Horizono)
 
