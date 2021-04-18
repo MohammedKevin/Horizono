@@ -138,18 +138,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - kevin.mohammed16@gmail.com
+kevin.mohammed16@gmail.com
 
 Project Link: [https://github.com/MohammedKevin/Horizono](https://github.com/MohammedKevin/Horizono)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
 
 
 
