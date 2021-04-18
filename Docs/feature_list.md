@@ -9,7 +9,7 @@
 * **Stereo**<br>
   To enhance the experience, a so-called stereo effect is used in Horizono. The dimension is switched from two-dimensional to three-dimensional. To make this possible, 3D glasses are needed for each player. These are provided by the AEC Deep Space. 
 
-* **HighScore**<br>
+* **Highscore**<br>
   The faster you bring the packages to the corresponding slots, the greater your chances of achieving a higher rank on the high score table. 
 
 * **En-/Decryption**<br>
