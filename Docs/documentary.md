@@ -176,3 +176,10 @@ Currently known (and unsolved) problems:
 
 
 You can download TUIO Simulator on this link: https://sourceforge.net/projects/reactivision/files/TUIO%201.0/TUIO-Clients%201.4/TUIO_Simulator-1.4.zip/download?use_mirror=deac-ams&download=
+
+
+## Testing in Deep Space
+First you need to build your Unity Project (File -> Build Settings -> Select your Scene (in our case AECProject) -> Build).<br>
+The only thing you have to do now is to send your build to the people of the AEC FutureLab. They will take care of your build, so it can run in the Deep Space and you can test it there.
+
+To get the E-Mail from the people of the FutureLab you can contact Lukas Bochis (lukas.bochis@gmail.com).
