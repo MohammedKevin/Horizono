@@ -125,7 +125,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-lukas.bochis@gmail.com
+lukas.bochis@gmail.com <br>
 kevin.mohammed16@gmail.com
 
 Project Link: [https://github.com/MohammedKevin/Horizono](https://github.com/MohammedKevin/Horizono)
