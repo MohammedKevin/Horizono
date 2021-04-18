@@ -11,12 +11,14 @@ public class MessageReceiver : MonoBehaviour
     public UdpReceiver udpReceiver;
 
     private Animator _animator;
+    private Text _debugText;
 
     // Start is called before the first frame update
     void Start()
     {
         udpReceiver.SubscribeReceiveEvent(ReceiveMessage);
         _animator = GetComponentInParent<Animator>();
+        _debugText = GameObject.Find("DebugText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -40,10 +42,14 @@ public class MessageReceiver : MonoBehaviour
         if (splittedMessage.Length < 1)
             return;
 
+        
+
         if (splittedMessage[0] == "Homebutton")
         {
             if (_animator != null)
                 _animator.SetTrigger(splittedMessage[1]);
+
+            _debugText.text = message;
         }
         else if (splittedMessage[0] == "MessageButton")
         {
@@ -52,6 +58,7 @@ public class MessageReceiver : MonoBehaviour
                 _animator.SetTrigger(splittedMessage[1]);
                 GameObject.Find("PhoneMessage").GetComponent<Text>().text = splittedMessage[2];
             }
+            _debugText.text = message;
         }
         else if (splittedMessage[0] == "EncWheel")
         {
@@ -67,15 +74,18 @@ public class MessageReceiver : MonoBehaviour
                     _animator.SetTrigger(splittedMessage[1]);
                 }
             }
+            _debugText.text = message;
         }
         else if (splittedMessage[0] == "Startbutton")
         {
             CountdownController countdown = GameObject.Find("CountdownCanvas").GetComponent<CountdownController>();
             countdown.StartCountDown();
+            _debugText.text = message;
         }
         else if (splittedMessage[0] == "Game" && splittedMessage[1] == "IncreasePoints")
         {
             GameObject.Find("PacketFloor").GetComponent<PacketFactoryScript>().IncreasePoints();
+            _debugText.text = message;
         }
 
     }
